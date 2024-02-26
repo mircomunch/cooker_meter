@@ -1,1 +1,1291 @@
-[]
+[
+    {
+        "id": "710558fa.25dab8",
+        "type": "tab",
+        "label": "Read and save data",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d3b4c2e1.c71fb",
+        "type": "tab",
+        "label": "Database",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7c26349d.98cf8c",
+        "type": "tab",
+        "label": "Interface",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6ab738f287ab7ef9",
+        "type": "tab",
+        "label": "Test manager",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ff263058e6c863b7",
+        "type": "sqlitedb",
+        "db": "/home/Greater/Desktop/energymeter.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "e801217b.23cd1",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#1a79c1",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#1a79c1",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#1a79c1",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#429fe6",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#1a79c1",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Cooker Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "menu",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "624ccbc0167d1984",
+        "type": "ui_tab",
+        "name": "Info",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e20e8dfcf55ba57e",
+        "type": "ui_group",
+        "name": "Current",
+        "tab": "624ccbc0167d1984",
+        "order": 2,
+        "disp": true,
+        "width": "16",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "6d7eafb3ae89f441",
+        "type": "ui_group",
+        "name": "Voltage",
+        "tab": "624ccbc0167d1984",
+        "order": 3,
+        "disp": true,
+        "width": "16",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "590f4fd2e0f3281c",
+        "type": "ui_group",
+        "name": "Last seen",
+        "tab": "624ccbc0167d1984",
+        "order": 1,
+        "disp": true,
+        "width": "16",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4930880ae94878e3",
+        "type": "ui_group",
+        "d": true,
+        "name": "Stats",
+        "tab": "624ccbc0167d1984",
+        "order": 5,
+        "disp": true,
+        "width": "1",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bb5dd6f7568c5483",
+        "type": "ui_group",
+        "name": "Power",
+        "tab": "624ccbc0167d1984",
+        "order": 4,
+        "disp": true,
+        "width": "16",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "d7fa4edb4ea08595",
+        "type": "ui_spacer",
+        "z": "7c26349d.98cf8c",
+        "name": "spacer",
+        "group": "590f4fd2e0f3281c",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "1f69d9688fa7b1ca",
+        "type": "ui_tab",
+        "name": "Manage",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "df2566236273d26e",
+        "type": "ui_group",
+        "name": "Insert Test",
+        "tab": "1f69d9688fa7b1ca",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3a3e92ea.365dde",
+        "type": "inject",
+        "z": "710558fa.25dab8",
+        "name": "Start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "17eada0e.06e1e6"
+            ]
+        ]
+    },
+    {
+        "id": "17eada0e.06e1e6",
+        "type": "function",
+        "z": "710558fa.25dab8",
+        "name": "",
+        "func": "msg.payload = {\n   operation: 'GET',\n   // requestedDPS: [18, 19, 20]\n   schema: true\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "666b465.a3faeb8"
+            ]
+        ]
+    },
+    {
+        "id": "d2982ffe.c64bb",
+        "type": "debug",
+        "z": "710558fa.25dab8",
+        "name": "Monitor Log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1bc34034dcbdb384",
+        "type": "debug",
+        "z": "710558fa.25dab8",
+        "name": "State",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4c8da7d223f3b678",
+        "type": "sqlite",
+        "z": "710558fa.25dab8",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS readings(timestamp INTEGER UNIQUE, id TEXT, current REAL, voltage REAL, power REAL);",
+        "name": "create table",
+        "x": 710,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8506f20235efc81d",
+        "type": "inject",
+        "z": "710558fa.25dab8",
+        "name": "Refresh",
+        "props": [],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [
+                "47dd842893b7ae6a"
+            ]
+        ]
+    },
+    {
+        "id": "47dd842893b7ae6a",
+        "type": "function",
+        "z": "710558fa.25dab8",
+        "name": "",
+        "func": "msg.payload = {\n   operation: 'REFRESH',\n   requestedDPS: [18, 19, 20]\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "666b465.a3faeb8"
+            ]
+        ]
+    },
+    {
+        "id": "81d2356c9c6913f5",
+        "type": "sqlite",
+        "z": "710558fa.25dab8",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "CREATE TABLE IF NOT EXISTS readings(id INTEGER, timestamp INTEGER, location TEXT NOT NULL, temperature INTEGER, humidity INTEGER, co INTEGER);",
+        "name": "insert data",
+        "x": 710,
+        "y": 480,
+        "wires": [
+            [
+                "93a6e83efaaa13c1"
+            ]
+        ]
+    },
+    {
+        "id": "42b51b6353580ef8",
+        "type": "template",
+        "z": "710558fa.25dab8",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO readings\n(timestamp,id,current,voltage,power)\nvalues\n({{payload.timestamp}}, \"{{payload.id}}\", {{payload.current}}, {{payload.voltage}}, {{payload.power}});",
+        "output": "str",
+        "x": 720,
+        "y": 420,
+        "wires": [
+            [
+                "81d2356c9c6913f5",
+                "5064863b45d8ae26"
+            ]
+        ]
+    },
+    {
+        "id": "7d445b680c51fa48",
+        "type": "function",
+        "z": "710558fa.25dab8",
+        "name": "parse",
+        "func": "var t = msg.payload.data.t;\nvar c = msg.payload.data.dps[\"18\"]/100;\nvar v = msg.payload.data.dps[\"20\"]/10;\nvar p = msg.payload.data.dps[\"19\"]/10;\nvar id = msg.payload.deviceId;\n\n// msg.payload = {\n//    timestamp: t,\n//    id: id,\n// }\n// if (!isNaN(c)) msg.payload.current = c;\n// if (!isNaN(v)) msg.payload.voltage = v;\n// if (!isNaN(p)) msg.payload.power = p;\n\nif (isNaN(c)) c = 'NULL';\nif (isNaN(v)) v = 'NULL';\nif (isNaN(p)) p = 'NULL';\nmsg.payload = {\n   timestamp: t,\n   id: id,\n   current: c,\n   voltage:v,\n   power: p\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 360,
+        "wires": [
+            [
+                "42b51b6353580ef8",
+                "5fbc9d89f02312ff"
+            ]
+        ]
+    },
+    {
+        "id": "5fbc9d89f02312ff",
+        "type": "debug",
+        "z": "710558fa.25dab8",
+        "name": "Monitor Log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "5064863b45d8ae26",
+        "type": "debug",
+        "z": "710558fa.25dab8",
+        "name": "Monitor Log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "93a6e83efaaa13c1",
+        "type": "link out",
+        "z": "710558fa.25dab8",
+        "name": "link to interface",
+        "mode": "link",
+        "links": [
+            "3f4966d0.43d8fa"
+        ],
+        "x": 865,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "666b465.a3faeb8",
+        "type": "tuya-smart-device",
+        "z": "710558fa.25dab8",
+        "deviceName": "Smart socket",
+        "disableAutoStart": false,
+        "deviceId": "bfc2b520b356414f88xjxa",
+        "deviceKey": "KSKi0p&G>>vfe:Qj",
+        "storeAsCreds": false,
+        "deviceIp": "",
+        "retryTimeout": "1000",
+        "findTimeout": "1000",
+        "tuyaVersion": "3.3",
+        "eventMode": "event-dp-refresh",
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "d2982ffe.c64bb",
+                "4c8da7d223f3b678",
+                "7d445b680c51fa48"
+            ],
+            [
+                "1bc34034dcbdb384"
+            ]
+        ]
+    },
+    {
+        "id": "6b13e73c.612848",
+        "type": "sqlite",
+        "z": "d3b4c2e1.c71fb",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "DELETE FROM readings;",
+        "name": "DELETE ALL!",
+        "x": 380,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "af390f24cbed13fa",
+        "type": "inject",
+        "z": "d3b4c2e1.c71fb",
+        "name": "Delete",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "6b13e73c.612848"
+            ]
+        ]
+    },
+    {
+        "id": "3f4966d0.43d8fa",
+        "type": "link in",
+        "z": "7c26349d.98cf8c",
+        "name": "link from read",
+        "links": [
+            "93a6e83efaaa13c1"
+        ],
+        "x": 75,
+        "y": 60,
+        "wires": [
+            [
+                "8b7160a2.fa561"
+            ]
+        ]
+    },
+    {
+        "id": "8b7160a2.fa561",
+        "type": "sqlite",
+        "z": "7c26349d.98cf8c",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "SELECT DISTINCT id FROM readings;",
+        "name": "Select ids",
+        "x": 300,
+        "y": 60,
+        "wires": [
+            [
+                "4bb0d5b7.07fadc"
+            ]
+        ]
+    },
+    {
+        "id": "4f3638e1.4d95d8",
+        "type": "switch",
+        "z": "7c26349d.98cf8c",
+        "name": "",
+        "property": "payload.id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "bfc2b520b356414f88xjxa",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 180,
+        "wires": [
+            [
+                "9f8ae5d7.f11ee8",
+                "5c5eba74.7d0074",
+                "65412986.e8c2e8",
+                "b9c31f01.ff5da",
+                "21f1426c.4097fe",
+                "2db1b1397dcfac0e",
+                "42da73bfe0b2dd0f"
+            ]
+        ]
+    },
+    {
+        "id": "4bb0d5b7.07fadc",
+        "type": "split",
+        "z": "7c26349d.98cf8c",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "4f3638e1.4d95d8"
+            ]
+        ]
+    },
+    {
+        "id": "3af5aa14.240cf6",
+        "type": "sqlite",
+        "z": "7c26349d.98cf8c",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "SELECT current",
+        "x": 700,
+        "y": 440,
+        "wires": [
+            [
+                "c2bbac05.fac51"
+            ]
+        ]
+    },
+    {
+        "id": "3b8b77e.8270888",
+        "type": "sqlite",
+        "z": "7c26349d.98cf8c",
+        "d": true,
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "avg temperature",
+        "x": 700,
+        "y": 320,
+        "wires": [
+            [
+                "847c0d87.7fd7c"
+            ]
+        ]
+    },
+    {
+        "id": "4446b0fa.d31bb",
+        "type": "sqlite",
+        "z": "7c26349d.98cf8c",
+        "d": true,
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "SELECT AVG(humidity) FROM readings WHERE (id == \"LLab-1\");",
+        "name": "avg humidity",
+        "x": 690,
+        "y": 380,
+        "wires": [
+            [
+                "83cf51e.d87b2b"
+            ]
+        ]
+    },
+    {
+        "id": "847c0d87.7fd7c",
+        "type": "function",
+        "z": "7c26349d.98cf8c",
+        "d": true,
+        "name": "",
+        "func": "msg.payload = msg.payload[0][\"AVG(temperature)\"].toFixed(1);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 320,
+        "wires": [
+            [
+                "fab29475.15dfc8"
+            ]
+        ]
+    },
+    {
+        "id": "83cf51e.d87b2b",
+        "type": "function",
+        "z": "7c26349d.98cf8c",
+        "d": true,
+        "name": "",
+        "func": "msg.payload = msg.payload[0][\"AVG(humidity)\"].toFixed(1);\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 380,
+        "wires": [
+            [
+                "7c7e7e05.e532d"
+            ]
+        ]
+    },
+    {
+        "id": "5c5eba74.7d0074",
+        "type": "template",
+        "z": "7c26349d.98cf8c",
+        "d": true,
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT AVG(temperature) FROM readings WHERE (id == \"{{payload.id}}\");",
+        "output": "str",
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "3b8b77e.8270888"
+            ]
+        ]
+    },
+    {
+        "id": "65412986.e8c2e8",
+        "type": "template",
+        "z": "7c26349d.98cf8c",
+        "d": true,
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT AVG(humidity) FROM readings WHERE (id == \"{{payload.id}}\");",
+        "output": "str",
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "4446b0fa.d31bb"
+            ]
+        ]
+    },
+    {
+        "id": "b9c31f01.ff5da",
+        "type": "template",
+        "z": "7c26349d.98cf8c",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n    timestamp,current\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp ASC;",
+        "output": "str",
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "3af5aa14.240cf6"
+            ]
+        ]
+    },
+    {
+        "id": "c2bbac05.fac51",
+        "type": "function",
+        "z": "7c26349d.98cf8c",
+        "name": "chart generator",
+        "func": "var chart = [];\n\nfor(let i=0;i<msg.payload.length;i++)\n{\n    var data = {\"x\": msg.payload[i].timestamp*1000, \"y\": msg.payload[i].current};\n    chart.push(data);\n}\nmsg.payload=[{\n    \"series\": [\"current\"],\n    \"data\": [chart],\n    \"labels\": [\"\"]\n}];\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 440,
+        "wires": [
+            [
+                "79a6134a.cef12c"
+            ]
+        ]
+    },
+    {
+        "id": "d6fba0db.f588b",
+        "type": "sqlite",
+        "z": "7c26349d.98cf8c",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "SELECT voltage",
+        "x": 700,
+        "y": 500,
+        "wires": [
+            [
+                "a539525.cff42b"
+            ]
+        ]
+    },
+    {
+        "id": "21f1426c.4097fe",
+        "type": "template",
+        "z": "7c26349d.98cf8c",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n    timestamp,voltage\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp ASC;",
+        "output": "str",
+        "x": 500,
+        "y": 500,
+        "wires": [
+            [
+                "d6fba0db.f588b"
+            ]
+        ]
+    },
+    {
+        "id": "a539525.cff42b",
+        "type": "function",
+        "z": "7c26349d.98cf8c",
+        "name": "chart generator",
+        "func": "var chart = [];\n\nfor(let i=0;i<msg.payload.length;i++)\n{\n    var data = {\"x\": msg.payload[i].timestamp*1000, \"y\": msg.payload[i].voltage};\n    chart.push(data);\n}\nmsg.payload=[{\n    \"series\": [\"voltage\"],\n    \"data\": [chart],\n    \"labels\": [\"\"]\n}];\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 500,
+        "wires": [
+            [
+                "b9cfb89d.d07388"
+            ]
+        ]
+    },
+    {
+        "id": "9f8ae5d7.f11ee8",
+        "type": "ui_text",
+        "z": "7c26349d.98cf8c",
+        "group": "590f4fd2e0f3281c",
+        "order": 1,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "id:",
+        "format": "{{msg.payload.id}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 470,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "fab29475.15dfc8",
+        "type": "ui_gauge",
+        "z": "7c26349d.98cf8c",
+        "d": true,
+        "name": "",
+        "group": "4930880ae94878e3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{msg.payload}}",
+        "min": "-20",
+        "max": "50",
+        "colors": [
+            "#00d5ff",
+            "#00ff1e",
+            "#ca3838"
+        ],
+        "seg1": "5",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 1110,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7c7e7e05.e532d",
+        "type": "ui_gauge",
+        "z": "7c26349d.98cf8c",
+        "d": true,
+        "name": "",
+        "group": "4930880ae94878e3",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "gtype": "wave",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{msg.payload}}",
+        "min": "10",
+        "max": "90",
+        "colors": [
+            "#00d5ff",
+            "#00ff1e",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 1100,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "79a6134a.cef12c",
+        "type": "ui_chart",
+        "z": "7c26349d.98cf8c",
+        "name": "",
+        "group": "e20e8dfcf55ba57e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#e02f10",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9cfb89d.d07388",
+        "type": "ui_chart",
+        "z": "7c26349d.98cf8c",
+        "name": "",
+        "group": "6d7eafb3ae89f441",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a28e935902ae057",
+        "type": "ui_text",
+        "z": "7c26349d.98cf8c",
+        "group": "590f4fd2e0f3281c",
+        "order": 3,
+        "width": 8,
+        "height": 1,
+        "name": "",
+        "label": "Last seen:",
+        "format": "{{msg.lastday}}/{{msg.lastmonth}}/{{msg.lastyear}} {{msg.lasthour}}:{{msg.lastminute}}:{{msg.lastsecond}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1110,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2db1b1397dcfac0e",
+        "type": "template",
+        "z": "7c26349d.98cf8c",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n    timestamp\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp DESC;",
+        "output": "str",
+        "x": 500,
+        "y": 260,
+        "wires": [
+            [
+                "c565503dd39e8a1c"
+            ]
+        ]
+    },
+    {
+        "id": "c565503dd39e8a1c",
+        "type": "sqlite",
+        "z": "7c26349d.98cf8c",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "SELECT last seen",
+        "x": 710,
+        "y": 260,
+        "wires": [
+            [
+                "3633cbc0a63b884c"
+            ]
+        ]
+    },
+    {
+        "id": "3633cbc0a63b884c",
+        "type": "function",
+        "z": "7c26349d.98cf8c",
+        "name": "",
+        "func": "const timestamp = msg.payload[0].timestamp*1000;\nconst data = new Date(timestamp);\nmsg = {\n    timestamp: timestamp,\n    lastday: data.getDate(),\n    lastmonth: data.getMonth()+1,\n    lastyear: data.getFullYear(),\n    lasthour: data.getHours(),\n    lastminute: data.getMinutes(),\n    lastsecond: data.getSeconds()\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "4a28e935902ae057"
+            ]
+        ]
+    },
+    {
+        "id": "faf3497ea3bc682e",
+        "type": "sqlite",
+        "z": "7c26349d.98cf8c",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "SELECT power",
+        "x": 700,
+        "y": 560,
+        "wires": [
+            [
+                "56a759206b176e8c"
+            ]
+        ]
+    },
+    {
+        "id": "42da73bfe0b2dd0f",
+        "type": "template",
+        "z": "7c26349d.98cf8c",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT\n    timestamp,power\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp ASC;",
+        "output": "str",
+        "x": 500,
+        "y": 560,
+        "wires": [
+            [
+                "faf3497ea3bc682e"
+            ]
+        ]
+    },
+    {
+        "id": "56a759206b176e8c",
+        "type": "function",
+        "z": "7c26349d.98cf8c",
+        "name": "chart generator",
+        "func": "var chart = [];\n\nfor(let i=0;i<msg.payload.length;i++)\n{\n    var data = { \"x\": msg.payload[i].timestamp * 1000, \"y\": msg.payload[i].power};\n    chart.push(data);\n}\nmsg.payload=[{\n    \"series\": [\"power\"],\n    \"data\": [chart],\n    \"labels\": [\"\"]\n}];\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 560,
+        "wires": [
+            [
+                "3d067267244ff0a6"
+            ]
+        ]
+    },
+    {
+        "id": "3d067267244ff0a6",
+        "type": "ui_chart",
+        "z": "7c26349d.98cf8c",
+        "name": "",
+        "group": "bb5dd6f7568c5483",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c037337afa1495a",
+        "type": "ui_form",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "label": "Insert",
+        "group": "df2566236273d26e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "ID",
+                "value": "id",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Name",
+                "value": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Description",
+                "value": "desc",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Date",
+                "value": "date",
+                "type": "date",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Time",
+                "value": "time",
+                "type": "time",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id": "",
+            "name": "",
+            "desc": "",
+            "date": "",
+            "time": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "2554adb11c225902",
+                "783b4cb03d902192",
+                "c1c1115b4885b7cc"
+            ]
+        ]
+    },
+    {
+        "id": "2554adb11c225902",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "783b4cb03d902192",
+        "type": "sqlite",
+        "z": "6ab738f287ab7ef9",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS test(id TEXT UNIQUE, name TEXT, description TEXT, created INTEGER, start INTEGER, stop INTEGER);",
+        "name": "create table",
+        "x": 450,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1c1115b4885b7cc",
+        "type": "sqlite",
+        "z": "6ab738f287ab7ef9",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "CREATE TABLE IF NOT EXISTS readings(id INTEGER, timestamp INTEGER, location TEXT NOT NULL, temperature INTEGER, humidity INTEGER, co INTEGER);",
+        "name": "insert data",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    }
+]
