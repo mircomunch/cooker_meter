@@ -7,13 +7,6 @@
         "info": ""
     },
     {
-        "id": "d3b4c2e1.c71fb",
-        "type": "tab",
-        "label": "Settings",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "6ab738f287ab7ef9",
         "type": "tab",
         "label": "Insert test",
@@ -22,87 +15,19 @@
         "env": []
     },
     {
-        "id": "e146cdeecf9bcebd",
+        "id": "d3b4c2e1.c71fb",
         "type": "tab",
-        "label": "Manage test",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "7c26349d.98cf8c",
-        "type": "tab",
-        "label": "Interface",
-        "disabled": true,
-        "info": ""
-    },
-    {
-        "id": "22052e68fedf6ce6",
-        "type": "tab",
-        "label": "Dummy uC",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "f58570a26e45bbdc",
-        "type": "tab",
-        "label": "MQTT - datetime e cmd",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "2f589c1fa72f19be",
-        "type": "tab",
-        "label": "MQTT - sensors",
+        "label": "Settings",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "464086673e62efae",
+        "id": "da69bb925cbe8d82",
         "type": "tab",
-        "label": "log",
+        "label": "Executed",
         "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "24e38c8e9edd57c3",
-        "type": "group",
-        "z": "22052e68fedf6ce6",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "27c2dce6c4d7b089",
-            "4dc1cbd578ef6065",
-            "caea89b14caf1c92",
-            "065aebc4b5cc9c76",
-            "ad2ed75dae9f6022",
-            "b69c384fe6c0685b",
-            "84cb1690f793d411",
-            "455840f784681733",
-            "5429f86c39cf2384",
-            "baabe529f7bd0577",
-            "8a9d8b8567b03ad7",
-            "0774912643e5f5bf",
-            "821bc403f30361e3",
-            "13944cdd0a4d2bd7",
-            "6fe6b321b99a40d0",
-            "b54f4203d162e4d6",
-            "f58a79e17e9c1853",
-            "d9192735b783c1bc"
-        ],
-        "x": 74,
-        "y": 39,
-        "w": 872,
-        "h": 582
+        "info": "",
+        "env": []
     },
     {
         "id": "ff263058e6c863b7",
@@ -126,7 +51,7 @@
                 "default": "#097479",
                 "baseColor": "#1a79c1",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false,
+                "edited": true,
                 "reset": false
             },
             "customTheme": {
@@ -193,8 +118,8 @@
         "site": {
             "name": "Cooker Dashboard",
             "hideToolbar": "false",
-            "allowSwipe": "menu",
-            "lockMenu": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
             "allowTempTheme": "true",
             "dateFormat": "DD/MM/YYYY",
             "sizes": {
@@ -212,89 +137,22 @@
     {
         "id": "624ccbc0167d1984",
         "type": "ui_tab",
-        "name": "Insert",
+        "name": "Manage test",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "e20e8dfcf55ba57e",
-        "type": "ui_group",
-        "d": true,
-        "name": "Current",
-        "tab": "624ccbc0167d1984",
-        "order": 3,
-        "disp": true,
-        "width": "16",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "6d7eafb3ae89f441",
-        "type": "ui_group",
-        "d": true,
-        "name": "Voltage",
-        "tab": "624ccbc0167d1984",
-        "order": 4,
-        "disp": true,
-        "width": "16",
-        "collapse": true,
-        "className": ""
     },
     {
         "id": "590f4fd2e0f3281c",
         "type": "ui_group",
-        "name": "Last seen",
+        "name": "Info",
         "tab": "c3e890fe74e7f044",
         "order": 1,
         "disp": true,
-        "width": "16",
+        "width": "8",
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "4930880ae94878e3",
-        "type": "ui_group",
-        "d": true,
-        "name": "Stats",
-        "tab": "624ccbc0167d1984",
-        "order": 6,
-        "disp": true,
-        "width": "1",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "bb5dd6f7568c5483",
-        "type": "ui_group",
-        "d": true,
-        "name": "Power",
-        "tab": "624ccbc0167d1984",
-        "order": 5,
-        "disp": true,
-        "width": "16",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "d7fa4edb4ea08595",
-        "type": "ui_spacer",
-        "z": "7c26349d.98cf8c",
-        "name": "spacer",
-        "group": "590f4fd2e0f3281c",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "1f69d9688fa7b1ca",
-        "type": "ui_tab",
-        "name": "Manage",
-        "icon": "dashboard",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "df2566236273d26e",
@@ -303,7 +161,7 @@
         "tab": "624ccbc0167d1984",
         "order": 1,
         "disp": true,
-        "width": "10",
+        "width": "7",
         "collapse": false,
         "className": ""
     },
@@ -332,238 +190,90 @@
         "tab": "c3e890fe74e7f044",
         "order": 2,
         "disp": true,
-        "width": "6",
+        "width": "8",
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "f14a0f059c981c25",
-        "type": "mqtt-broker",
-        "name": "hiveMQ free",
-        "broker": "broker.hivemq.com",
-        "port": "1883",
-        "tls": "",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "4ab556e815260d6e",
-        "type": "ui_group",
-        "name": "chart",
-        "tab": "",
-        "order": 4,
-        "disp": false,
-        "width": 16,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "5f10cab10122c8a2",
-        "type": "ui_group",
-        "name": "table",
-        "tab": "",
-        "order": 1,
-        "disp": false,
-        "width": "10",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "e7518674fd285e30",
-        "type": "mqtt-broker",
-        "name": "hiveMQ console",
-        "broker": "350fd0725fa14a069e04d387121e69f7.s2.eu.hivemq.cloud",
-        "port": "8883",
-        "tls": "",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": true,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "31548b849fd4d661",
-        "type": "ui_spacer",
-        "z": "2f589c1fa72f19be",
-        "name": "spacer",
-        "group": "4ab556e815260d6e",
-        "order": 1,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "df0aac56159d03ef",
-        "type": "ui_spacer",
-        "z": "2f589c1fa72f19be",
-        "name": "spacer",
-        "group": "4ab556e815260d6e",
-        "order": 3,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "75e25d71e49cbe09",
-        "type": "ui_spacer",
-        "z": "2f589c1fa72f19be",
-        "name": "spacer",
-        "group": "4ab556e815260d6e",
-        "order": 5,
-        "width": 5,
-        "height": 1
-    },
-    {
-        "id": "b6feb7cd1ed37885",
-        "type": "ui_spacer",
-        "z": "2f589c1fa72f19be",
-        "name": "spacer",
-        "group": "4ab556e815260d6e",
-        "order": 6,
-        "width": 16,
-        "height": 1
-    },
-    {
-        "id": "9611727cf8968ba3",
-        "type": "ui_spacer",
-        "z": "2f589c1fa72f19be",
-        "name": "spacer",
-        "group": "4ab556e815260d6e",
-        "order": 8,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "588ff3a4d912c43a",
-        "type": "ui_spacer",
-        "z": "2f589c1fa72f19be",
-        "name": "spacer",
-        "group": "4ab556e815260d6e",
-        "order": 10,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "c64a9c9d58545730",
-        "type": "ui_spacer",
-        "z": "464086673e62efae",
-        "name": "spacer",
-        "group": "5f10cab10122c8a2",
-        "order": 1,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f3174bc95ef0fa92",
-        "type": "ui_spacer",
-        "z": "464086673e62efae",
-        "name": "spacer",
-        "group": "5f10cab10122c8a2",
-        "order": 3,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "b045b61a5521db78",
-        "type": "ui_spacer",
-        "z": "464086673e62efae",
-        "name": "spacer",
-        "group": "5f10cab10122c8a2",
-        "order": 5,
-        "width": 2,
-        "height": 1
-    },
-    {
-        "id": "34a4e3177687a910",
-        "type": "ui_spacer",
-        "z": "464086673e62efae",
-        "name": "spacer",
-        "group": "5f10cab10122c8a2",
-        "order": 6,
-        "width": 10,
-        "height": 1
-    },
-    {
-        "id": "66395aec281639b7",
-        "type": "ui_spacer",
-        "z": "464086673e62efae",
-        "name": "spacer",
-        "group": "5f10cab10122c8a2",
-        "order": 8,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "da8bfe0ebb0c7ae6",
-        "type": "ui_spacer",
-        "z": "464086673e62efae",
-        "name": "spacer",
-        "group": "5f10cab10122c8a2",
-        "order": 10,
-        "width": 3,
-        "height": 1
     },
     {
         "id": "4b4471c50f53aec4",
         "type": "ui_group",
         "name": "Existing Tests",
         "tab": "624ccbc0167d1984",
-        "order": 2,
+        "order": 4,
         "disp": true,
-        "width": "20",
+        "width": "16",
         "collapse": false,
         "className": ""
     },
     {
         "id": "6db24db1cd29db42",
         "type": "ui_group",
-        "name": "start and stop",
-        "tab": "1f69d9688fa7b1ca",
-        "order": 1,
-        "disp": false,
-        "width": "20",
+        "name": "Start / Stop test",
+        "tab": "624ccbc0167d1984",
+        "order": 2,
+        "disp": true,
+        "width": "7",
         "collapse": false,
         "className": ""
     },
     {
         "id": "5cd2e94ce01fda57",
         "type": "ui_group",
-        "name": "log",
+        "name": "Log Readings",
+        "tab": "c3e890fe74e7f044",
+        "order": 4,
+        "disp": true,
+        "width": "16",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "61421ef862476cd1",
+        "type": "ui_spacer",
+        "z": "6ab738f287ab7ef9",
+        "name": "spacer",
+        "group": "6db24db1cd29db42",
+        "order": 2,
+        "width": "7",
+        "height": "1"
+    },
+    {
+        "id": "e31938e545fd7b49",
+        "type": "ui_spacer",
+        "z": "6ab738f287ab7ef9",
+        "name": "spacer",
+        "group": "6db24db1cd29db42",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e438d182788d62ed",
+        "type": "ui_group",
+        "name": "Log Test",
         "tab": "c3e890fe74e7f044",
         "order": 3,
+        "disp": true,
+        "width": "16",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "d9707895f2a38616",
+        "type": "ui_spacer",
+        "z": "d3b4c2e1.c71fb",
+        "name": "spacer",
+        "group": "be26d6ac96b8cc75",
+        "order": 2,
+        "width": "6",
+        "height": "3"
+    },
+    {
+        "id": "570451a3057b1b1e",
+        "type": "ui_group",
+        "name": "Resume",
+        "tab": "1e6e2f3d5466b64e",
+        "order": 1,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -584,7 +294,9 @@
         "y": 120,
         "wires": [
             [
-                "17eada0e.06e1e6"
+                "17eada0e.06e1e6",
+                "4c8da7d223f3b678",
+                "783b4cb03d902192"
             ]
         ]
     },
@@ -600,7 +312,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
+        "x": 400,
         "y": 120,
         "wires": [
             [
@@ -621,7 +333,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
+        "x": 780,
         "y": 100,
         "wires": []
     },
@@ -638,23 +350,9 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 650,
+        "x": 770,
         "y": 140,
         "wires": []
-    },
-    {
-        "id": "4c8da7d223f3b678",
-        "type": "sqlite",
-        "z": "710558fa.25dab8",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "fixed",
-        "sql": "CREATE TABLE IF NOT EXISTS readings(timestamp INTEGER UNIQUE, idd TEXT, current REAL, voltage REAL, power REAL);",
-        "name": "create table",
-        "x": 710,
-        "y": 260,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "8506f20235efc81d",
@@ -671,7 +369,7 @@
         "y": 200,
         "wires": [
             [
-                "47dd842893b7ae6a"
+                "3379d1c8c5452e4a"
             ]
         ]
     },
@@ -687,7 +385,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
+        "x": 400,
         "y": 200,
         "wires": [
             [
@@ -703,8 +401,8 @@
         "sqlquery": "msg.topic",
         "sql": "CREATE TABLE IF NOT EXISTS readings(id INTEGER, timestamp INTEGER, location TEXT NOT NULL, temperature INTEGER, humidity INTEGER, co INTEGER);",
         "name": "insert data into \"readings\"",
-        "x": 750,
-        "y": 440,
+        "x": 710,
+        "y": 480,
         "wires": [
             [
                 "93a6e83efaaa13c1"
@@ -720,10 +418,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "INSERT INTO readings\n(timestamp,idd,current,voltage,power)\nvalues\n({{payload.timestamp}}, \"{{payload.idd}}\", {{payload.current}}, {{payload.voltage}}, {{payload.power}});",
+        "template": "INSERT INTO readings\n(timestamp,idd,current,voltage,power)\nvalues\n({{payload.timestamp}}*1000, \"{{payload.idd}}\", {{payload.current}}, {{payload.voltage}}, {{payload.power}});",
         "output": "str",
-        "x": 720,
-        "y": 380,
+        "x": 460,
+        "y": 440,
         "wires": [
             [
                 "81d2356c9c6913f5",
@@ -743,8 +441,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 320,
+        "x": 250,
+        "y": 420,
         "wires": [
             [
                 "42b51b6353580ef8",
@@ -766,8 +464,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 320,
+        "x": 460,
+        "y": 380,
         "wires": []
     },
     {
@@ -783,8 +481,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 380,
+        "x": 680,
+        "y": 400,
         "wires": []
     },
     {
@@ -797,8 +495,8 @@
             "3f4966d0.43d8fa",
             "c023bf66bb5c99b9"
         ],
-        "x": 895,
-        "y": 440,
+        "x": 855,
+        "y": 480,
         "wires": []
     },
     {
@@ -815,16 +513,1054 @@
         "findTimeout": "1000",
         "tuyaVersion": "3.3",
         "eventMode": "event-dp-refresh",
-        "x": 450,
+        "x": 570,
         "y": 160,
         "wires": [
             [
                 "d2982ffe.c64bb",
-                "4c8da7d223f3b678",
                 "7d445b680c51fa48"
             ],
             [
                 "1bc34034dcbdb384"
+            ]
+        ]
+    },
+    {
+        "id": "3379d1c8c5452e4a",
+        "type": "switch",
+        "z": "710558fa.25dab8",
+        "name": "",
+        "property": "run",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "47dd842893b7ae6a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4c8da7d223f3b678",
+        "type": "sqlite",
+        "z": "710558fa.25dab8",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS readings(timestamp INTEGER UNIQUE, idd TEXT, current REAL, voltage REAL, power REAL);",
+        "name": "create readings",
+        "x": 420,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "783b4cb03d902192",
+        "type": "sqlite",
+        "z": "710558fa.25dab8",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS test(id TEXT UNIQUE, name TEXT, description TEXT, created INTEGER, start INTEGER, stop INTEGER);",
+        "name": "create test",
+        "x": 410,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c037337afa1495a",
+        "type": "ui_form",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "label": "",
+        "group": "df2566236273d26e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "ID",
+                "value": "id",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Name",
+                "value": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Description",
+                "value": "desc",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "id": "",
+            "name": "",
+            "desc": ""
+        },
+        "payload": "",
+        "submit": "insert",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "2554adb11c225902",
+                "fbfdd369866354cb"
+            ]
+        ]
+    },
+    {
+        "id": "2554adb11c225902",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "form",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 250,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "c1c1115b4885b7cc",
+        "type": "sqlite",
+        "z": "6ab738f287ab7ef9",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "CREATE TABLE IF NOT EXISTS readings(id INTEGER, timestamp INTEGER, location TEXT NOT NULL, temperature INTEGER, humidity INTEGER, co INTEGER);",
+        "name": "insert new test",
+        "x": 760,
+        "y": 200,
+        "wires": [
+            [
+                "ddf39df0a015aa5f",
+                "d9dae8b61f5cc9b0"
+            ]
+        ]
+    },
+    {
+        "id": "733099ba4732e7fe",
+        "type": "template",
+        "z": "6ab738f287ab7ef9",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "INSERT INTO test\n(id,name,description,created)\nvalues\n(\"{{payload.id}}\", \"{{payload.name}}\", \"{{payload.desc}}\", {{payload.created}});",
+        "output": "str",
+        "x": 560,
+        "y": 160,
+        "wires": [
+            [
+                "c1c1115b4885b7cc",
+                "8d4022dc48a5b819"
+            ]
+        ]
+    },
+    {
+        "id": "fbfdd369866354cb",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "add timestamp of creation",
+        "func": "var currentDate = new Date()\nmsg.payload.created = currentDate.getTime();\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 160,
+        "wires": [
+            [
+                "733099ba4732e7fe"
+            ]
+        ]
+    },
+    {
+        "id": "8d4022dc48a5b819",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "query",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d5513f0cb0c5f692",
+        "type": "ui_toast",
+        "z": "6ab738f287ab7ef9",
+        "position": "dialog",
+        "displayTime": "",
+        "highlight": "red",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 450,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63b14836612f014e",
+        "type": "catch",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "scope": [
+            "c1c1115b4885b7cc"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 240,
+        "wires": [
+            [
+                "9c9c8a0451e7d2bf"
+            ]
+        ]
+    },
+    {
+        "id": "9c9c8a0451e7d2bf",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "notification",
+        "func": "msg. payload = \"The ID of the new test already exists!\";\nmsg.topic = \"ERROR\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 240,
+        "wires": [
+            [
+                "d5513f0cb0c5f692"
+            ]
+        ]
+    },
+    {
+        "id": "69e464032c9b837f",
+        "type": "ui_table",
+        "z": "6ab738f287ab7ef9",
+        "group": "4b4471c50f53aec4",
+        "name": "",
+        "order": 1,
+        "width": 16,
+        "height": 10,
+        "columns": [
+            {
+                "field": "id",
+                "title": "ID",
+                "width": "15%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "name",
+                "title": "Name",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "description",
+                "title": "Description",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "created",
+                "title": "Created",
+                "width": "25%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "state",
+                "title": "State",
+                "width": "10%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 690,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "ddf39df0a015aa5f",
+        "type": "sqlite",
+        "z": "6ab738f287ab7ef9",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "SELECT\n    *\nFROM\n    test\nORDER BY\n    created DESC;",
+        "name": "show tests",
+        "x": 270,
+        "y": 360,
+        "wires": [
+            [
+                "62b07f4592dc3abd"
+            ]
+        ]
+    },
+    {
+        "id": "62b07f4592dc3abd",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "add umanDate of creation",
+        "func": "for (let index = 0; index < msg.payload.length; index++) {\n    const data = new Date(msg.payload[index].created);\n    const umanDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n                    (((data.getMonth()+1) < 10 ? '0' : '') + (data.getMonth()+1)) + \"/\" +\n                    data.getFullYear() + \" \" +\n                    ((data.getHours() < 10 ? '0' : '') + data.getHours()) + \":\" +\n                    ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes())  + \":\" +\n                    ((data.getSeconds() < 10 ? '0' : '') + data.getSeconds());\n    msg.payload[index].created = umanDate;\n    if(!(msg.payload[index].start) && !(msg.payload[index].stop)) {\n        msg.payload[index].state = \"ready\"\n    }\n    else if((msg.payload[index].start) && !(msg.payload[index].stop)) {\n        msg.payload[index].state = \"running\"\n    }\n    else if((msg.payload[index].start) && (msg.payload[index].stop)) {\n        msg.payload[index].state = \"executed\"\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "69e464032c9b837f",
+                "b0bd4940b30224e7"
+            ]
+        ]
+    },
+    {
+        "id": "c73e051ebc8ce252",
+        "type": "inject",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "ddf39df0a015aa5f",
+                "d9dae8b61f5cc9b0"
+            ]
+        ]
+    },
+    {
+        "id": "b0bd4940b30224e7",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "table setup",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d9dae8b61f5cc9b0",
+        "type": "sqlite",
+        "z": "6ab738f287ab7ef9",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "SELECT\n    id\nFROM\n    test\nWHERE\n    stop IS NULL\nORDER BY\n    created DESC;",
+        "name": "show tests",
+        "x": 270,
+        "y": 540,
+        "wires": [
+            [
+                "2f5b69afc6554bd7",
+                "53f740459705a855"
+            ]
+        ]
+    },
+    {
+        "id": "2f5b69afc6554bd7",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "ids to be executed",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "44d2556f9de63817",
+        "type": "ui_dropdown",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select test ID",
+        "group": "6db24db1cd29db42",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 620,
+        "y": 580,
+        "wires": [
+            [
+                "4a49f59bacb98c81",
+                "3e56a3352670d246"
+            ]
+        ]
+    },
+    {
+        "id": "4a49f59bacb98c81",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "selected id",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3e56a3352670d246",
+        "type": "change",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "id",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53f740459705a855",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "set options",
+        "func": "msg.options = [];\nfor (let index = 0; index < msg.payload.length; index++) {\n    const element = msg.payload[index].id;\n    msg.options.push(element);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 580,
+        "wires": [
+            [
+                "44d2556f9de63817"
+            ]
+        ]
+    },
+    {
+        "id": "d64080391fc0d924",
+        "type": "ui_button",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "group": "6db24db1cd29db42",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "green",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 720,
+        "wires": [
+            [
+                "f3f885757e58b489",
+                "4b1cca4651da5091"
+            ]
+        ]
+    },
+    {
+        "id": "33fd984228df3bf0",
+        "type": "ui_button",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "group": "6db24db1cd29db42",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Stop",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 900,
+        "wires": [
+            [
+                "fe68907f27e1dbb4",
+                "14ca936da9541740"
+            ]
+        ]
+    },
+    {
+        "id": "f3f885757e58b489",
+        "type": "change",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "run",
+                "pt": "global",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe68907f27e1dbb4",
+        "type": "change",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "run",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c4b24f0fb0d52a06",
+        "type": "sqlite",
+        "z": "6ab738f287ab7ef9",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "start test",
+        "x": 460,
+        "y": 800,
+        "wires": [
+            [
+                "b9af4ba440595404"
+            ]
+        ]
+    },
+    {
+        "id": "4b1cca4651da5091",
+        "type": "template",
+        "z": "6ab738f287ab7ef9",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "UPDATE test\nSET\n    start = {{payload}}\nWHERE\n    id = \"{{global.id}}\";\n",
+        "output": "str",
+        "x": 280,
+        "y": 760,
+        "wires": [
+            [
+                "c4b24f0fb0d52a06",
+                "595107659360d6a0"
+            ]
+        ]
+    },
+    {
+        "id": "595107659360d6a0",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "query",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "9b8fa25fc567beda",
+        "type": "sqlite",
+        "z": "6ab738f287ab7ef9",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "stop test",
+        "x": 460,
+        "y": 980,
+        "wires": [
+            [
+                "abfebee53c9d352a",
+                "e8ef19036bc7ecba"
+            ]
+        ]
+    },
+    {
+        "id": "14ca936da9541740",
+        "type": "template",
+        "z": "6ab738f287ab7ef9",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "UPDATE test\nSET\n    stop = {{payload}}\nWHERE\n    id = \"{{global.id}}\";\n",
+        "output": "str",
+        "x": 280,
+        "y": 940,
+        "wires": [
+            [
+                "9b8fa25fc567beda",
+                "613766049f9dedde"
+            ]
+        ]
+    },
+    {
+        "id": "613766049f9dedde",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "query",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "740b46cbbc290c62",
+        "type": "ui_text",
+        "z": "6ab738f287ab7ef9",
+        "group": "6db24db1cd29db42",
+        "order": 6,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Running: ",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 440,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "ace64fae344dbe86",
+        "type": "inject",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 1060,
+        "wires": [
+            [
+                "4b2978492053765f",
+                "231ab64c956872aa"
+            ]
+        ]
+    },
+    {
+        "id": "4b2978492053765f",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "set options",
+        "func": "if (global.get(\"id\") && global.get(\"run\")) {\n    msg.payload = global.get(\"id\")\n}\nelse {\n    msg.payload = \"-\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1060,
+        "wires": [
+            [
+                "740b46cbbc290c62"
+            ]
+        ]
+    },
+    {
+        "id": "b9af4ba440595404",
+        "type": "link out",
+        "z": "6ab738f287ab7ef9",
+        "name": "update table",
+        "mode": "link",
+        "links": [
+            "37da58eaa8f85a5a"
+        ],
+        "x": 565,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "37da58eaa8f85a5a",
+        "type": "link in",
+        "z": "6ab738f287ab7ef9",
+        "name": "update occurred",
+        "links": [
+            "b9af4ba440595404",
+            "abfebee53c9d352a"
+        ],
+        "x": 125,
+        "y": 360,
+        "wires": [
+            [
+                "ddf39df0a015aa5f"
+            ]
+        ]
+    },
+    {
+        "id": "abfebee53c9d352a",
+        "type": "link out",
+        "z": "6ab738f287ab7ef9",
+        "name": "update table",
+        "mode": "link",
+        "links": [
+            "37da58eaa8f85a5a"
+        ],
+        "x": 565,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "37d1ca1624cd2ef0",
+        "type": "switch",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "property": "run",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 430,
+        "y": 1120,
+        "wires": [
+            [
+                "30791ec2a3756706"
+            ],
+            [
+                "db4e2046126be54c"
+            ]
+        ]
+    },
+    {
+        "id": "231ab64c956872aa",
+        "type": "delay",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "5",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 280,
+        "y": 1120,
+        "wires": [
+            [
+                "37d1ca1624cd2ef0"
+            ]
+        ]
+    },
+    {
+        "id": "30791ec2a3756706",
+        "type": "template",
+        "z": "6ab738f287ab7ef9",
+        "name": "compose query",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT start\nFROM\n    test\nWHERE\n    id = \"{{global.id}}\";\n",
+        "output": "str",
+        "x": 600,
+        "y": 1100,
+        "wires": [
+            [
+                "5e16e9e9f9b7cc4b"
+            ]
+        ]
+    },
+    {
+        "id": "5e16e9e9f9b7cc4b",
+        "type": "sqlite",
+        "z": "6ab738f287ab7ef9",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "running time",
+        "x": 790,
+        "y": 1120,
+        "wires": [
+            [
+                "e4f5170b741c6876"
+            ]
+        ]
+    },
+    {
+        "id": "e4f5170b741c6876",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "calculate running time",
+        "func": "var currentDate = new Date()\nmsg.curr = currentDate.getTime();\nmsg.elapsed = Math.round(((currentDate.getTime() - msg.payload[0].start)/1000)/60);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1220,
+        "wires": [
+            [
+                "51117d39392e741e",
+                "01080113b4705d7d"
+            ]
+        ]
+    },
+    {
+        "id": "e8ef19036bc7ecba",
+        "type": "link out",
+        "z": "6ab738f287ab7ef9",
+        "name": "stopped command",
+        "mode": "link",
+        "links": [
+            "baeca8e31a1512a3"
+        ],
+        "x": 565,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "baeca8e31a1512a3",
+        "type": "link in",
+        "z": "6ab738f287ab7ef9",
+        "name": "stopped",
+        "links": [
+            "e8ef19036bc7ecba"
+        ],
+        "x": 125,
+        "y": 540,
+        "wires": [
+            [
+                "d9dae8b61f5cc9b0"
+            ]
+        ]
+    },
+    {
+        "id": "51117d39392e741e",
+        "type": "ui_text",
+        "z": "6ab738f287ab7ef9",
+        "group": "6db24db1cd29db42",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Time [min]: ",
+        "format": "{{msg.elapsed}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 510,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "01080113b4705d7d",
+        "type": "debug",
+        "z": "6ab738f287ab7ef9",
+        "name": "query",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "db4e2046126be54c",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "set options",
+        "func": "msg.elapsed = \"-\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1140,
+        "wires": [
+            [
+                "51117d39392e741e"
             ]
         ]
     },
@@ -963,10 +1699,11 @@
         "id": "50de0f3a5e17f893",
         "type": "ui_form",
         "z": "d3b4c2e1.c71fb",
+        "d": true,
         "name": "",
         "label": "Delete",
         "group": "be26d6ac96b8cc75",
-        "order": 3,
+        "order": 1,
         "width": 0,
         "height": 0,
         "options": [
@@ -1009,38 +1746,12 @@
         "mydb": "ff263058e6c863b7",
         "sqlquery": "fixed",
         "sql": "SELECT DISTINCT idd FROM readings;",
-        "name": "Select ids",
-        "x": 160,
-        "y": 480,
+        "name": "Select idds",
+        "x": 370,
+        "y": 400,
         "wires": [
             [
                 "fc2906bfda839451"
-            ]
-        ]
-    },
-    {
-        "id": "48b7d0a18f0b7620",
-        "type": "switch",
-        "z": "d3b4c2e1.c71fb",
-        "name": "",
-        "property": "payload.idd",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "bfc2b520b356414f88xjxa",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 450,
-        "y": 480,
-        "wires": [
-            [
-                "e4021d5905842f4a",
-                "0d9dcaab202adb8b"
             ]
         ]
     },
@@ -1055,11 +1766,11 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 310,
-        "y": 480,
+        "x": 510,
+        "y": 400,
         "wires": [
             [
-                "48b7d0a18f0b7620"
+                "e36b5f2435b24c87"
             ]
         ]
     },
@@ -1069,19 +1780,19 @@
         "z": "d3b4c2e1.c71fb",
         "group": "590f4fd2e0f3281c",
         "order": 1,
-        "width": 7,
+        "width": 8,
         "height": 1,
         "name": "",
         "label": "ID:",
-        "format": "{{msg.payload.id}}",
+        "format": "{{msg.payload.idd}}",
         "layout": "row-left",
         "className": "",
         "style": false,
         "font": "",
         "fontSize": "",
         "color": "#000000",
-        "x": 150,
-        "y": 580,
+        "x": 670,
+        "y": 480,
         "wires": []
     },
     {
@@ -1089,20 +1800,20 @@
         "type": "ui_text",
         "z": "d3b4c2e1.c71fb",
         "group": "590f4fd2e0f3281c",
-        "order": 3,
+        "order": 2,
         "width": 8,
         "height": 1,
         "name": "",
         "label": "Last seen:",
-        "format": "{{msg.lastday}}/{{msg.lastmonth}}/{{msg.lastyear}} {{msg.lasthour}}:{{msg.lastminute}}:{{msg.lastsecond}}",
+        "format": "{{msg.umanDate}}",
         "layout": "row-left",
         "className": "",
         "style": false,
         "font": "",
         "fontSize": "",
         "color": "#000000",
-        "x": 750,
-        "y": 620,
+        "x": 770,
+        "y": 560,
         "wires": []
     },
     {
@@ -1114,10 +1825,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SELECT\n    timestamp\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp DESC;",
+        "template": "SELECT\n    timestamp\nFROM\n    readings\nWHERE\n    (idd = \"{{payload.idd}}\")\nORDER BY\n    timestamp DESC;",
         "output": "str",
-        "x": 180,
-        "y": 620,
+        "x": 200,
+        "y": 560,
         "wires": [
             [
                 "4edcf6ebfaea62ac"
@@ -1132,8 +1843,8 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "SELECT last seen",
-        "x": 390,
-        "y": 620,
+        "x": 410,
+        "y": 560,
         "wires": [
             [
                 "53e0b3416f6fbba5"
@@ -1145,15 +1856,15 @@
         "type": "function",
         "z": "d3b4c2e1.c71fb",
         "name": "",
-        "func": "const timestamp = msg.payload[0].timestamp*1000;\nconst data = new Date(timestamp);\nmsg = {\n    timestamp: timestamp,\n    lastday: data.getDate(),\n    lastmonth: data.getMonth()+1,\n    lastyear: data.getFullYear(),\n    lasthour: data.getHours(),\n    lastminute: data.getMinutes(),\n    lastsecond: data.getSeconds()\n};\nreturn msg;",
+        "func": "var umanDate = \"-\"\nif (msg.payload[0]){\n    const timestamp = msg.payload[0].timestamp;\n    const data = new Date(timestamp);\n\n    umanDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n                    (((data.getMonth()+1) < 10 ? '0' : '') + (data.getMonth()+1)) + \"/\" +\n                    data.getFullYear() + \" \" +\n                    ((data.getHours() < 10 ? '0' : '') + data.getHours()) + \":\" +\n                    ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes())  + \":\" +\n                    ((data.getSeconds() < 10 ? '0' : '') + data.getSeconds());\n}\nmsg.umanDate = umanDate;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 620,
+        "x": 600,
+        "y": 560,
         "wires": [
             [
                 "5ac6deb431e8b8c2"
@@ -1169,10 +1880,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SELECT\n    *\nFROM\n    readings\nWHERE\n    (idd == \"{{payload.idd}}\")\nORDER BY\n    timestamp DESC;",
+        "template": "SELECT\n    *\nFROM\n    readings\nWHERE\n    (idd = \"{{global.idd}}\")\nORDER BY\n    timestamp DESC;",
         "output": "str",
-        "x": 180,
-        "y": 680,
+        "x": 380,
+        "y": 620,
         "wires": [
             [
                 "8cc0cf9de79ab0de"
@@ -1187,28 +1898,8 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "SELECT * readings",
-        "x": 390,
-        "y": 680,
-        "wires": [
-            [
-                "a20df9b96abb6476"
-            ]
-        ]
-    },
-    {
-        "id": "a20df9b96abb6476",
-        "type": "function",
-        "z": "d3b4c2e1.c71fb",
-        "name": "",
-        "func": "const timestamp = msg.payload[0].timestamp*1000;\nconst data = new Date(timestamp);\nmsg = {\n    timestamp: timestamp,\n    lastday: data.getDate(),\n    lastmonth: data.getMonth()+1,\n    lastyear: data.getFullYear(),\n    lasthour: data.getHours(),\n    lastminute: data.getMinutes(),\n    lastsecond: data.getSeconds()\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 680,
+        "x": 590,
+        "y": 620,
         "wires": [
             [
                 "59cd071b0eb34b7c"
@@ -1224,10 +1915,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SELECT\n    *\nFROM\n    test\nORDER BY\n    timestamp DESC;",
+        "template": "SELECT\n    *\nFROM\n    test\nORDER BY\n    created DESC;",
         "output": "str",
-        "x": 180,
-        "y": 740,
+        "x": 380,
+        "y": 680,
         "wires": [
             [
                 "93e43cd88db8f97f"
@@ -1242,11 +1933,11 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "SELECT * test",
-        "x": 380,
-        "y": 740,
+        "x": 580,
+        "y": 680,
         "wires": [
             [
-                "db04a685293cd144"
+                "405014bf685aeebf"
             ]
         ]
     },
@@ -1256,30 +1947,81 @@
         "z": "d3b4c2e1.c71fb",
         "group": "5cd2e94ce01fda57",
         "name": "readings",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "columns": [],
+        "order": 1,
+        "width": "16",
+        "height": "8",
+        "columns": [
+            {
+                "field": "timestamp",
+                "title": "Timestamp",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "idd",
+                "title": "ID device",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "current",
+                "title": "Current",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "voltage",
+                "title": "Voltage",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "power",
+                "title": "Power",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
         "outputs": 0,
         "cts": false,
-        "x": 740,
-        "y": 680,
+        "x": 780,
+        "y": 620,
         "wires": []
     },
     {
         "id": "405014bf685aeebf",
         "type": "ui_table",
         "z": "d3b4c2e1.c71fb",
-        "group": "4b4471c50f53aec4",
+        "group": "e438d182788d62ed",
         "name": "test",
         "order": 1,
-        "width": "20",
-        "height": "12",
+        "width": "16",
+        "height": "6",
         "columns": [
             {
                 "field": "id",
                 "title": "ID",
-                "width": "15%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1289,7 +2031,7 @@
             {
                 "field": "name",
                 "title": "Name",
-                "width": "30%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1299,7 +2041,7 @@
             {
                 "field": "description",
                 "title": "Description",
-                "width": "20%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1309,7 +2051,7 @@
             {
                 "field": "created",
                 "title": "Created",
-                "width": "25%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1339,2240 +2081,232 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 830,
-        "y": 740,
+        "x": 770,
+        "y": 680,
         "wires": []
     },
     {
-        "id": "db04a685293cd144",
-        "type": "function",
+        "id": "98213513e6bcf571",
+        "type": "inject",
         "z": "d3b4c2e1.c71fb",
-        "name": "add timestamp of creation",
-        "func": "for (let index = 0; index < msg.payload.length; index++) {\n    const data = new Date(msg.payload[index].created);\n    const umanDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n                    (((data.getMonth()+1) < 10 ? '0' : '') + (data.getMonth()+1)) + \"/\" +\n                    data.getFullYear() + \" \" +\n                    data.getHours()  + \":\" +\n                    ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes())  + \":\" +\n                    data.getSeconds();\n    msg.payload[index].created = umanDate;\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 740,
-        "wires": [
-            [
-                "405014bf685aeebf"
-            ]
-        ]
-    },
-    {
-        "id": "2c037337afa1495a",
-        "type": "ui_form",
-        "z": "6ab738f287ab7ef9",
-        "name": "",
-        "label": "",
-        "group": "df2566236273d26e",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "options": [
-            {
-                "label": "ID",
-                "value": "id",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Name",
-                "value": "name",
-                "type": "text",
-                "required": true,
-                "rows": null
-            },
-            {
-                "label": "Description",
-                "value": "desc",
-                "type": "text",
-                "required": false,
-                "rows": null
-            }
-        ],
-        "formValue": {
-            "id": "",
-            "name": "",
-            "desc": ""
-        },
-        "payload": "",
-        "submit": "submit",
-        "cancel": "cancel",
-        "topic": "topic",
-        "topicType": "msg",
-        "splitLayout": false,
-        "className": "",
-        "x": 90,
-        "y": 120,
-        "wires": [
-            [
-                "2554adb11c225902",
-                "783b4cb03d902192",
-                "fbfdd369866354cb"
-            ]
-        ]
-    },
-    {
-        "id": "2554adb11c225902",
-        "type": "debug",
-        "z": "6ab738f287ab7ef9",
-        "name": "form",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 350,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "783b4cb03d902192",
-        "type": "sqlite",
-        "z": "6ab738f287ab7ef9",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "fixed",
-        "sql": "CREATE TABLE IF NOT EXISTS test(id TEXT UNIQUE, name TEXT, description TEXT, created INTEGER, start INTEGER, stop INTEGER);",
-        "name": "create table",
-        "x": 370,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c1c1115b4885b7cc",
-        "type": "sqlite",
-        "z": "6ab738f287ab7ef9",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "msg.topic",
-        "sql": "CREATE TABLE IF NOT EXISTS readings(id INTEGER, timestamp INTEGER, location TEXT NOT NULL, temperature INTEGER, humidity INTEGER, co INTEGER);",
-        "name": "insert data",
-        "x": 830,
-        "y": 180,
-        "wires": [
-            [
-                "ddf39df0a015aa5f"
-            ]
-        ]
-    },
-    {
-        "id": "733099ba4732e7fe",
-        "type": "template",
-        "z": "6ab738f287ab7ef9",
-        "name": "compose query",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "INSERT INTO test\n(id,name,description,created)\nvalues\n(\"{{payload.id}}\", \"{{payload.name}}\", \"{{payload.desc}}\", {{payload.created}});",
-        "output": "str",
-        "x": 640,
-        "y": 180,
-        "wires": [
-            [
-                "c1c1115b4885b7cc",
-                "8d4022dc48a5b819"
-            ]
-        ]
-    },
-    {
-        "id": "fbfdd369866354cb",
-        "type": "function",
-        "z": "6ab738f287ab7ef9",
-        "name": "add timestamp of creation",
-        "func": "var currentDate = new Date()\nmsg.payload.created = currentDate.getTime();\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 180,
-        "wires": [
-            [
-                "733099ba4732e7fe"
-            ]
-        ]
-    },
-    {
-        "id": "8d4022dc48a5b819",
-        "type": "debug",
-        "z": "6ab738f287ab7ef9",
-        "name": "query",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 810,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "d5513f0cb0c5f692",
-        "type": "ui_toast",
-        "z": "6ab738f287ab7ef9",
-        "position": "dialog",
-        "displayTime": "",
-        "highlight": "red",
-        "sendall": true,
-        "outputs": 1,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 690,
-        "y": 520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "63b14836612f014e",
-        "type": "catch",
-        "z": "6ab738f287ab7ef9",
-        "name": "",
-        "scope": [
-            "c1c1115b4885b7cc"
-        ],
-        "uncaught": false,
-        "x": 350,
-        "y": 520,
-        "wires": [
-            [
-                "9c9c8a0451e7d2bf"
-            ]
-        ]
-    },
-    {
-        "id": "9c9c8a0451e7d2bf",
-        "type": "function",
-        "z": "6ab738f287ab7ef9",
-        "name": "notification",
-        "func": "msg. payload = \"The ID of the test already exists!\";\nmsg.topic = \"Insert a new ID\";\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 510,
-        "y": 520,
-        "wires": [
-            [
-                "d5513f0cb0c5f692"
-            ]
-        ]
-    },
-    {
-        "id": "69e464032c9b837f",
-        "type": "ui_table",
-        "z": "6ab738f287ab7ef9",
-        "group": "4b4471c50f53aec4",
-        "name": "",
-        "order": 1,
-        "width": "20",
-        "height": "12",
-        "columns": [
-            {
-                "field": "id",
-                "title": "ID",
-                "width": "15%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "name",
-                "title": "Name",
-                "width": "30%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "description",
-                "title": "Description",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "created",
-                "title": "Created",
-                "width": "25%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "executed",
-                "title": "Executed",
-                "width": "10%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 810,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "ddf39df0a015aa5f",
-        "type": "sqlite",
-        "z": "6ab738f287ab7ef9",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "fixed",
-        "sql": "SELECT\n    *\nFROM\n    test\nORDER BY\n    created DESC;",
-        "name": "show tests",
-        "x": 370,
-        "y": 360,
-        "wires": [
-            [
-                "62b07f4592dc3abd"
-            ]
-        ]
-    },
-    {
-        "id": "62b07f4592dc3abd",
-        "type": "function",
-        "z": "6ab738f287ab7ef9",
-        "name": "add timestamp of creation",
-        "func": "for (let index = 0; index < msg.payload.length; index++) {\n    const data = new Date(msg.payload[index].created);\n    const umanDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n                    (((data.getMonth()+1) < 10 ? '0' : '') + (data.getMonth()+1)) + \"/\" +\n                    data.getFullYear() + \" \" +\n                    data.getHours()  + \":\" +\n                    ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes())  + \":\" +\n                    data.getSeconds();\n    msg.payload[index].created = umanDate;\n    if(!(msg.payload[index].start) || !(msg.payload[index].stop)) {\n        msg.payload[index].executed = \"false\"\n    }\n    else {\n        msg.payload[index].executed = \"true\"\n    }\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 590,
-        "y": 360,
-        "wires": [
-            [
-                "69e464032c9b837f",
-                "b0bd4940b30224e7",
-                "a61e1c5c58a45d7c"
-            ]
-        ]
-    },
-    {
-        "id": "c73e051ebc8ce252",
-        "type": "inject",
-        "z": "6ab738f287ab7ef9",
         "name": "",
         "props": [],
-        "repeat": "",
+        "repeat": "3600",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 90,
-        "y": 360,
-        "wires": [
-            [
-                "ddf39df0a015aa5f"
-            ]
-        ]
-    },
-    {
-        "id": "b0bd4940b30224e7",
-        "type": "debug",
-        "z": "6ab738f287ab7ef9",
-        "name": "table setup",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
+        "x": 170,
         "y": 400,
-        "wires": []
+        "wires": [
+            [
+                "cd093fbb43c2cfe8"
+            ]
+        ]
     },
     {
-        "id": "a61e1c5c58a45d7c",
-        "type": "link out",
-        "z": "6ab738f287ab7ef9",
-        "name": "new test",
-        "mode": "link",
-        "links": [
-            "dec2e7b36d26179c"
-        ],
-        "x": 775,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "8694bf38a88861ad",
-        "type": "ui_table",
-        "z": "e146cdeecf9bcebd",
-        "group": "6db24db1cd29db42",
+        "id": "e36b5f2435b24c87",
+        "type": "change",
+        "z": "d3b4c2e1.c71fb",
         "name": "",
-        "order": 1,
-        "width": "20",
-        "height": "12",
-        "columns": [
-            {
-                "field": "id",
-                "title": "ID",
-                "width": "15%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "name",
-                "title": "Name",
-                "width": "30%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "description",
-                "title": "Description",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "created",
-                "title": "Created",
-                "width": "25%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "executable",
-                "title": "Start/Stop",
-                "width": "10%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 730,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "d9dae8b61f5cc9b0",
-        "type": "sqlite",
-        "z": "e146cdeecf9bcebd",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "fixed",
-        "sql": "SELECT\n    *\nFROM\n    test\nORDER BY\n    created DESC;",
-        "name": "show tests",
-        "x": 290,
-        "y": 80,
-        "wires": [
-            [
-                "154445c3ef8bd65f"
-            ]
-        ]
-    },
-    {
-        "id": "154445c3ef8bd65f",
-        "type": "function",
-        "z": "e146cdeecf9bcebd",
-        "name": "add timestamp of creation",
-        "func": "for (let index = 0; index < msg.payload.length; index++) {\n    const data = new Date(msg.payload[index].created);\n    const umanDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n                    (((data.getMonth()+1) < 10 ? '0' : '') + (data.getMonth()+1)) + \"/\" +\n                    data.getFullYear() + \" \" +\n                    data.getHours()  + \":\" +\n                    ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes())  + \":\" +\n                    data.getSeconds();\n    msg.payload[index].created = umanDate;\n    if(!(msg.payload[index].start) || !(msg.payload[index].stop)) {\n        msg.payload[index].executable = true\n    }\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 510,
-        "y": 80,
-        "wires": [
-            [
-                "8694bf38a88861ad",
-                "2f5b69afc6554bd7"
-            ]
-        ]
-    },
-    {
-        "id": "5d275f4e59c77d1d",
-        "type": "inject",
-        "z": "e146cdeecf9bcebd",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 80,
-        "wires": [
-            [
-                "d9dae8b61f5cc9b0"
-            ]
-        ]
-    },
-    {
-        "id": "2f5b69afc6554bd7",
-        "type": "debug",
-        "z": "e146cdeecf9bcebd",
-        "name": "table setup",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 750,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "dec2e7b36d26179c",
-        "type": "link in",
-        "z": "e146cdeecf9bcebd",
-        "name": "update manager",
-        "links": [
-            "a61e1c5c58a45d7c"
-        ],
-        "x": 145,
-        "y": 140,
-        "wires": [
-            [
-                "d9dae8b61f5cc9b0"
-            ]
-        ]
-    },
-    {
-        "id": "8acc848b1c3bea11",
-        "type": "ui_button",
-        "z": "e146cdeecf9bcebd",
-        "name": "",
-        "group": "6db24db1cd29db42",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "button",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "id",
-        "payloadType": "global",
-        "topic": "run",
-        "topicType": "global",
-        "x": 470,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3f4966d0.43d8fa",
-        "type": "link in",
-        "z": "7c26349d.98cf8c",
-        "name": "link from read",
-        "links": [
-            "93a6e83efaaa13c1"
-        ],
-        "x": 75,
-        "y": 60,
-        "wires": [
-            [
-                "8b7160a2.fa561"
-            ]
-        ]
-    },
-    {
-        "id": "8b7160a2.fa561",
-        "type": "sqlite",
-        "z": "7c26349d.98cf8c",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "fixed",
-        "sql": "SELECT DISTINCT id FROM readings;",
-        "name": "Select ids",
-        "x": 300,
-        "y": 60,
-        "wires": [
-            [
-                "4bb0d5b7.07fadc"
-            ]
-        ]
-    },
-    {
-        "id": "4f3638e1.4d95d8",
-        "type": "switch",
-        "z": "7c26349d.98cf8c",
-        "name": "",
-        "property": "payload.id",
-        "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "bfc2b520b356414f88xjxa",
-                "vt": "str"
+                "t": "set",
+                "p": "idd",
+                "pt": "global",
+                "to": "payload.idd",
+                "tot": "msg"
             }
         ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 270,
-        "y": 180,
-        "wires": [
-            [
-                "5c5eba74.7d0074",
-                "65412986.e8c2e8",
-                "b9c31f01.ff5da",
-                "21f1426c.4097fe",
-                "2db1b1397dcfac0e",
-                "42da73bfe0b2dd0f",
-                "9f8ae5d7.f11ee8"
-            ]
-        ]
-    },
-    {
-        "id": "4bb0d5b7.07fadc",
-        "type": "split",
-        "z": "7c26349d.98cf8c",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 150,
-        "y": 180,
-        "wires": [
-            [
-                "4f3638e1.4d95d8"
-            ]
-        ]
-    },
-    {
-        "id": "3af5aa14.240cf6",
-        "type": "sqlite",
-        "z": "7c26349d.98cf8c",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "SELECT current",
-        "x": 700,
-        "y": 380,
-        "wires": [
-            [
-                "c2bbac05.fac51"
-            ]
-        ]
-    },
-    {
-        "id": "3b8b77e.8270888",
-        "type": "sqlite",
-        "z": "7c26349d.98cf8c",
-        "d": true,
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "avg temperature",
-        "x": 700,
-        "y": 260,
-        "wires": [
-            [
-                "847c0d87.7fd7c"
-            ]
-        ]
-    },
-    {
-        "id": "4446b0fa.d31bb",
-        "type": "sqlite",
-        "z": "7c26349d.98cf8c",
-        "d": true,
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "msg.topic",
-        "sql": "SELECT AVG(humidity) FROM readings WHERE (id == \"LLab-1\");",
-        "name": "avg humidity",
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
         "x": 690,
-        "y": 320,
-        "wires": [
-            [
-                "83cf51e.d87b2b"
-            ]
-        ]
-    },
-    {
-        "id": "847c0d87.7fd7c",
-        "type": "function",
-        "z": "7c26349d.98cf8c",
-        "d": true,
-        "name": "",
-        "func": "msg.payload = msg.payload[0][\"AVG(temperature)\"].toFixed(1);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 260,
-        "wires": [
-            [
-                "fab29475.15dfc8"
-            ]
-        ]
-    },
-    {
-        "id": "83cf51e.d87b2b",
-        "type": "function",
-        "z": "7c26349d.98cf8c",
-        "d": true,
-        "name": "",
-        "func": "msg.payload = msg.payload[0][\"AVG(humidity)\"].toFixed(1);\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 900,
-        "y": 320,
-        "wires": [
-            [
-                "7c7e7e05.e532d"
-            ]
-        ]
-    },
-    {
-        "id": "5c5eba74.7d0074",
-        "type": "template",
-        "z": "7c26349d.98cf8c",
-        "d": true,
-        "name": "compose query",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "SELECT AVG(temperature) FROM readings WHERE (id == \"{{payload.id}}\");",
-        "output": "str",
-        "x": 500,
-        "y": 260,
-        "wires": [
-            [
-                "3b8b77e.8270888"
-            ]
-        ]
-    },
-    {
-        "id": "65412986.e8c2e8",
-        "type": "template",
-        "z": "7c26349d.98cf8c",
-        "d": true,
-        "name": "compose query",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "SELECT AVG(humidity) FROM readings WHERE (id == \"{{payload.id}}\");",
-        "output": "str",
-        "x": 500,
-        "y": 320,
-        "wires": [
-            [
-                "4446b0fa.d31bb"
-            ]
-        ]
-    },
-    {
-        "id": "b9c31f01.ff5da",
-        "type": "template",
-        "z": "7c26349d.98cf8c",
-        "name": "compose query",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "SELECT\n    timestamp,current\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp ASC;",
-        "output": "str",
-        "x": 500,
-        "y": 380,
-        "wires": [
-            [
-                "3af5aa14.240cf6"
-            ]
-        ]
-    },
-    {
-        "id": "c2bbac05.fac51",
-        "type": "function",
-        "z": "7c26349d.98cf8c",
-        "name": "chart generator",
-        "func": "var chart = [];\n\nfor(let i=0;i<msg.payload.length;i++)\n{\n    var data = {\"x\": msg.payload[i].timestamp*1000, \"y\": msg.payload[i].current};\n    chart.push(data);\n}\nmsg.payload=[{\n    \"series\": [\"current\"],\n    \"data\": [chart],\n    \"labels\": [\"\"]\n}];\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 380,
-        "wires": [
-            [
-                "79a6134a.cef12c"
-            ]
-        ]
-    },
-    {
-        "id": "d6fba0db.f588b",
-        "type": "sqlite",
-        "z": "7c26349d.98cf8c",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "SELECT voltage",
-        "x": 700,
-        "y": 440,
-        "wires": [
-            [
-                "a539525.cff42b"
-            ]
-        ]
-    },
-    {
-        "id": "21f1426c.4097fe",
-        "type": "template",
-        "z": "7c26349d.98cf8c",
-        "name": "compose query",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "SELECT\n    timestamp,voltage\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp ASC;",
-        "output": "str",
-        "x": 500,
-        "y": 440,
-        "wires": [
-            [
-                "d6fba0db.f588b"
-            ]
-        ]
-    },
-    {
-        "id": "a539525.cff42b",
-        "type": "function",
-        "z": "7c26349d.98cf8c",
-        "name": "chart generator",
-        "func": "var chart = [];\n\nfor(let i=0;i<msg.payload.length;i++)\n{\n    var data = {\"x\": msg.payload[i].timestamp*1000, \"y\": msg.payload[i].voltage};\n    chart.push(data);\n}\nmsg.payload=[{\n    \"series\": [\"voltage\"],\n    \"data\": [chart],\n    \"labels\": [\"\"]\n}];\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 440,
-        "wires": [
-            [
-                "b9cfb89d.d07388"
-            ]
-        ]
-    },
-    {
-        "id": "fab29475.15dfc8",
-        "type": "ui_gauge",
-        "z": "7c26349d.98cf8c",
-        "d": true,
-        "name": "",
-        "group": "4930880ae94878e3",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Temperature",
-        "label": "°C",
-        "format": "{{msg.payload}}",
-        "min": "-20",
-        "max": "50",
-        "colors": [
-            "#00d5ff",
-            "#00ff1e",
-            "#ca3838"
-        ],
-        "seg1": "5",
-        "seg2": "30",
-        "diff": false,
-        "className": "",
-        "x": 1110,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "7c7e7e05.e532d",
-        "type": "ui_gauge",
-        "z": "7c26349d.98cf8c",
-        "d": true,
-        "name": "",
-        "group": "4930880ae94878e3",
-        "order": 2,
-        "width": 1,
-        "height": 1,
-        "gtype": "wave",
-        "title": "Humidity",
-        "label": "%",
-        "format": "{{msg.payload}}",
-        "min": "10",
-        "max": "90",
-        "colors": [
-            "#00d5ff",
-            "#00ff1e",
-            "#ca3838"
-        ],
-        "seg1": "40",
-        "seg2": "70",
-        "diff": false,
-        "className": "",
-        "x": 1100,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "79a6134a.cef12c",
-        "type": "ui_chart",
-        "z": "7c26349d.98cf8c",
-        "name": "",
-        "group": "e20e8dfcf55ba57e",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": true,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "1",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#e02f10",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1090,
-        "y": 380,
+        "y": 400,
         "wires": [
             []
         ]
     },
     {
-        "id": "b9cfb89d.d07388",
-        "type": "ui_chart",
-        "z": "7c26349d.98cf8c",
+        "id": "39a7eed1d8223087",
+        "type": "inject",
+        "z": "d3b4c2e1.c71fb",
         "name": "",
-        "group": "6d7eafb3ae89f441",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": true,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "1",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1090,
-        "y": 440,
+        "props": [],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 480,
         "wires": [
-            []
+            [
+                "37167a8a6acb8af7"
+            ]
         ]
     },
     {
-        "id": "4a28e935902ae057",
-        "type": "ui_text",
-        "z": "7c26349d.98cf8c",
-        "group": "590f4fd2e0f3281c",
+        "id": "37167a8a6acb8af7",
+        "type": "change",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.idd",
+                "pt": "msg",
+                "to": "idd",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 480,
+        "wires": [
+            [
+                "e4021d5905842f4a",
+                "0d9dcaab202adb8b"
+            ]
+        ]
+    },
+    {
+        "id": "128a60e694462861",
+        "type": "inject",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 620,
+        "wires": [
+            [
+                "ba924c827655ed51",
+                "7334e0ba394f6d85"
+            ]
+        ]
+    },
+    {
+        "id": "3e0144bc1626f9bc",
+        "type": "ui_button",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "group": "e438d182788d62ed",
         "order": 3,
-        "width": 8,
-        "height": 1,
-        "name": "",
-        "label": "Last seen:",
-        "format": "{{msg.lastday}}/{{msg.lastmonth}}/{{msg.lastyear}} {{msg.lasthour}}:{{msg.lastminute}}:{{msg.lastsecond}}",
-        "layout": "row-left",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 1110,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "2db1b1397dcfac0e",
-        "type": "template",
-        "z": "7c26349d.98cf8c",
-        "name": "compose query",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "SELECT\n    timestamp\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp DESC;",
-        "output": "str",
-        "x": 500,
-        "y": 200,
-        "wires": [
-            [
-                "c565503dd39e8a1c"
-            ]
-        ]
-    },
-    {
-        "id": "c565503dd39e8a1c",
-        "type": "sqlite",
-        "z": "7c26349d.98cf8c",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "SELECT last seen",
-        "x": 710,
-        "y": 200,
-        "wires": [
-            [
-                "3633cbc0a63b884c"
-            ]
-        ]
-    },
-    {
-        "id": "3633cbc0a63b884c",
-        "type": "function",
-        "z": "7c26349d.98cf8c",
-        "name": "",
-        "func": "const timestamp = msg.payload[0].timestamp*1000;\nconst data = new Date(timestamp);\nmsg = {\n    timestamp: timestamp,\n    lastday: data.getDate(),\n    lastmonth: data.getMonth()+1,\n    lastyear: data.getFullYear(),\n    lasthour: data.getHours(),\n    lastminute: data.getMinutes(),\n    lastsecond: data.getSeconds()\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 200,
-        "wires": [
-            [
-                "4a28e935902ae057"
-            ]
-        ]
-    },
-    {
-        "id": "faf3497ea3bc682e",
-        "type": "sqlite",
-        "z": "7c26349d.98cf8c",
-        "mydb": "ff263058e6c863b7",
-        "sqlquery": "msg.topic",
-        "sql": "",
-        "name": "SELECT power",
-        "x": 700,
-        "y": 500,
-        "wires": [
-            [
-                "56a759206b176e8c"
-            ]
-        ]
-    },
-    {
-        "id": "42da73bfe0b2dd0f",
-        "type": "template",
-        "z": "7c26349d.98cf8c",
-        "name": "compose query",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "SELECT\n    timestamp,power\nFROM\n    readings\nWHERE\n    (id == \"{{payload.id}}\")\nORDER BY\n    timestamp ASC;",
-        "output": "str",
-        "x": 500,
-        "y": 500,
-        "wires": [
-            [
-                "faf3497ea3bc682e"
-            ]
-        ]
-    },
-    {
-        "id": "56a759206b176e8c",
-        "type": "function",
-        "z": "7c26349d.98cf8c",
-        "name": "chart generator",
-        "func": "var chart = [];\n\nfor(let i=0;i<msg.payload.length;i++)\n{\n    var data = { \"x\": msg.payload[i].timestamp * 1000, \"y\": msg.payload[i].power};\n    chart.push(data);\n}\nmsg.payload=[{\n    \"series\": [\"power\"],\n    \"data\": [chart],\n    \"labels\": [\"\"]\n}];\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 500,
-        "wires": [
-            [
-                "3d067267244ff0a6"
-            ]
-        ]
-    },
-    {
-        "id": "3d067267244ff0a6",
-        "type": "ui_chart",
-        "z": "7c26349d.98cf8c",
-        "name": "",
-        "group": "bb5dd6f7568c5483",
-        "order": 1,
         "width": 0,
         "height": 0,
-        "label": "",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": true,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "1000",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
         "className": "",
-        "x": 1090,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9f8ae5d7.f11ee8",
-        "type": "ui_text",
-        "z": "7c26349d.98cf8c",
-        "group": "590f4fd2e0f3281c",
-        "order": 1,
-        "width": 7,
-        "height": 1,
-        "name": "",
-        "label": "id:",
-        "format": "{{msg.payload.id}}",
-        "layout": "row-left",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 470,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "27c2dce6c4d7b089",
-        "type": "mqtt in",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "",
-        "topic": "unipr/sistemb/datetime",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "e7518674fd285e30",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 200,
-        "y": 120,
-        "wires": [
-            [
-                "4dc1cbd578ef6065",
-                "baabe529f7bd0577"
-            ]
-        ]
-    },
-    {
-        "id": "c45fe38b89497f6e",
-        "type": "mqtt out",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "name": "",
-        "topic": "unipr/sistemb/sensors",
-        "qos": "0",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "f14a0f059c981c25",
-        "x": 560,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "4dc1cbd578ef6065",
-        "type": "debug",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "uC /datetime",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 430,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "60e1c3c143215c5a",
-        "type": "inject",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
+        "icon": "",
         "payload": "",
-        "payloadType": "date",
-        "x": 150,
-        "y": 740,
-        "wires": [
-            [
-                "433eccb0e5bf24b3"
-            ]
-        ]
-    },
-    {
-        "id": "433eccb0e5bf24b3",
-        "type": "function",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "name": "json composer",
-        "func": "msg.payload = {\n    \"timestamp\": msg.payload,\n    \"sensors\": {\n        \"temperature\": Math.floor(Math.random()*30),\n    },\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 340,
-        "y": 740,
-        "wires": [
-            [
-                "c45fe38b89497f6e"
-            ]
-        ]
-    },
-    {
-        "id": "caea89b14caf1c92",
-        "type": "mqtt in",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "",
-        "topic": "unipr/sistemb/cmd",
-        "qos": "0",
-        "datatype": "auto-detect",
-        "broker": "e7518674fd285e30",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 210,
-        "y": 320,
-        "wires": [
-            [
-                "065aebc4b5cc9c76",
-                "13944cdd0a4d2bd7"
-            ]
-        ]
-    },
-    {
-        "id": "065aebc4b5cc9c76",
-        "type": "debug",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "uC /cmd",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 420,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "ad2ed75dae9f6022",
-        "type": "switch",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "switch run",
-        "property": "run",
-        "propertyType": "flow",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 420,
-        "y": 440,
-        "wires": [
-            [
-                "b69c384fe6c0685b"
-            ],
-            [
-                "5429f86c39cf2384"
-            ]
-        ]
-    },
-    {
-        "id": "b69c384fe6c0685b",
-        "type": "trigger",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "",
-        "op1": "",
-        "op2": "0",
-        "op1type": "date",
-        "op2type": "str",
-        "duration": "-1",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
+        "payloadType": "str",
         "topic": "topic",
-        "outputs": 1,
-        "x": 800,
-        "y": 460,
+        "topicType": "msg",
+        "x": 160,
+        "y": 680,
         "wires": [
             [
-                "84cb1690f793d411"
+                "ba924c827655ed51",
+                "7334e0ba394f6d85"
             ]
         ]
     },
     {
-        "id": "84cb1690f793d411",
-        "type": "function",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "json composer",
-        "func": "msg.payload = {\n    \"timestamp\": msg.payload,\n    \"sensors\": {\n        \"temperature\": Math.floor(Math.random()*30),\n    },\n};\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 800,
-        "y": 520,
-        "wires": [
-            [
-                "455840f784681733"
-            ]
-        ]
-    },
-    {
-        "id": "455840f784681733",
-        "type": "mqtt out",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
+        "id": "277452eb82bf925d",
+        "type": "ui_button",
+        "z": "d3b4c2e1.c71fb",
         "name": "",
-        "topic": "unipr/sistemb/sensors",
-        "qos": "0",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "e7518674fd285e30",
-        "x": 820,
-        "y": 580,
-        "wires": []
+        "group": "5cd2e94ce01fda57",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 740,
+        "wires": [
+            [
+                "ba924c827655ed51",
+                "7334e0ba394f6d85"
+            ]
+        ]
     },
     {
-        "id": "5429f86c39cf2384",
-        "type": "function",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "reset",
-        "func": "msg.reset=true;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
+        "id": "c12886e515905db8",
+        "type": "comment",
+        "z": "d3b4c2e1.c71fb",
+        "name": "da finire",
+        "info": "",
         "x": 590,
-        "y": 520,
-        "wires": [
-            [
-                "b69c384fe6c0685b"
-            ]
-        ]
-    },
-    {
-        "id": "baabe529f7bd0577",
-        "type": "change",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "timestamp",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 140,
-        "wires": [
-            [
-                "6fe6b321b99a40d0"
-            ]
-        ]
-    },
-    {
-        "id": "8a9d8b8567b03ad7",
-        "type": "inject",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.5",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 230,
-        "y": 220,
-        "wires": [
-            [
-                "0774912643e5f5bf"
-            ]
-        ]
-    },
-    {
-        "id": "0774912643e5f5bf",
-        "type": "change",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "",
-        "rules": [
-            {
-                "t": "delete",
-                "p": "timestamp",
-                "pt": "flow"
-            },
-            {
-                "t": "set",
-                "p": "run",
-                "pt": "flow",
-                "to": "false",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 440,
-        "y": 220,
-        "wires": [
-            [
-                "b54f4203d162e4d6"
-            ]
-        ]
-    },
-    {
-        "id": "821bc403f30361e3",
-        "type": "switch",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "switch datetime",
-        "property": "timestamp",
-        "propertyType": "flow",
-        "rules": [
-            {
-                "t": "nnull"
-            },
-            {
-                "t": "null"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 240,
-        "y": 480,
-        "wires": [
-            [
-                "ad2ed75dae9f6022"
-            ],
-            [
-                "5429f86c39cf2384"
-            ]
-        ]
-    },
-    {
-        "id": "13944cdd0a4d2bd7",
-        "type": "change",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "run",
-                "pt": "flow",
-                "to": "payload.run",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 340,
-        "wires": [
-            [
-                "f58a79e17e9c1853"
-            ]
-        ]
-    },
-    {
-        "id": "6fe6b321b99a40d0",
-        "type": "link out",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "to logic",
-        "mode": "link",
-        "links": [
-            "d9192735b783c1bc"
-        ],
-        "x": 625,
-        "y": 140,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "b54f4203d162e4d6",
-        "type": "link out",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "to logic",
-        "mode": "link",
-        "links": [
-            "d9192735b783c1bc"
-        ],
-        "x": 625,
+        "id": "a895f87b6b98ed6d",
+        "type": "comment",
+        "z": "d3b4c2e1.c71fb",
+        "name": "da finire",
+        "info": "",
+        "x": 585.2000122070312,
+        "y": 137.1999969482422,
+        "wires": []
+    },
+    {
+        "id": "d3f1501b19915e9f",
+        "type": "comment",
+        "z": "d3b4c2e1.c71fb",
+        "name": "da finire",
+        "info": "",
+        "x": 590,
         "y": 220,
         "wires": []
     },
     {
-        "id": "f58a79e17e9c1853",
-        "type": "link out",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "to logic",
-        "mode": "link",
-        "links": [
-            "d9192735b783c1bc"
-        ],
-        "x": 625,
-        "y": 340,
+        "id": "a687ec771d3d79ef",
+        "type": "comment",
+        "z": "d3b4c2e1.c71fb",
+        "name": "da finire",
+        "info": "",
+        "x": 670,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "d9192735b783c1bc",
-        "type": "link in",
-        "z": "22052e68fedf6ce6",
-        "d": true,
-        "g": "24e38c8e9edd57c3",
-        "name": "logic",
-        "links": [
-            "b54f4203d162e4d6",
-            "6fe6b321b99a40d0",
-            "f58a79e17e9c1853"
-        ],
-        "x": 115,
-        "y": 480,
-        "wires": [
-            [
-                "821bc403f30361e3"
-            ]
-        ]
-    },
-    {
-        "id": "9cea513f08d3b296",
-        "type": "inject",
-        "z": "f58570a26e45bbdc",
+        "id": "507f21d8642ce03a",
+        "type": "ui_table",
+        "z": "da69bb925cbe8d82",
+        "group": "570451a3057b1b1e",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 100,
-        "wires": [
-            [
-                "82776704c0bd997c"
-            ]
-        ]
-    },
-    {
-        "id": "82776704c0bd997c",
-        "type": "mqtt out",
-        "z": "f58570a26e45bbdc",
-        "name": "",
-        "topic": "unipr/sistemb/datetime",
-        "qos": "0",
-        "retain": "false",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "e7518674fd285e30",
-        "x": 580,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "3ee1456e808a5c0d",
-        "type": "ui_button",
-        "z": "f58570a26e45bbdc",
-        "name": "",
-        "group": "4ab556e815260d6e",
-        "order": 2,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "Update datetime",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 300,
-        "y": 160,
-        "wires": [
-            [
-                "82776704c0bd997c",
-                "542afd39bed67724"
-            ]
-        ]
-    },
-    {
-        "id": "ceba04c1f4989fb7",
-        "type": "ui_switch",
-        "z": "f58570a26e45bbdc",
-        "name": "",
-        "label": "Run",
-        "tooltip": "",
-        "group": "4ab556e815260d6e",
-        "order": 4,
-        "width": 2,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "{\"run\":true}",
-        "onvalueType": "json",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "{\"run\":false}",
-        "offvalueType": "json",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 330,
-        "y": 360,
-        "wires": [
-            [
-                "a3014e30c64ba754",
-                "487905fb34a8ea49"
-            ]
-        ]
-    },
-    {
-        "id": "a3014e30c64ba754",
-        "type": "mqtt out",
-        "z": "f58570a26e45bbdc",
-        "name": "",
-        "topic": "unipr/sistemb/cmd",
-        "qos": "0",
-        "retain": "true",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "e7518674fd285e30",
-        "x": 570,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "07b43a5b4abb8ab4",
-        "type": "ui_button",
-        "z": "f58570a26e45bbdc",
-        "name": "",
-        "group": "5f10cab10122c8a2",
-        "order": 2,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "Update datetime",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 300,
-        "y": 220,
-        "wires": [
-            [
-                "82776704c0bd997c"
-            ]
-        ],
-        "info": "log"
-    },
-    {
-        "id": "1697dcc81fdb7ba5",
-        "type": "ui_switch",
-        "z": "f58570a26e45bbdc",
-        "name": "",
-        "label": "Run",
-        "tooltip": "",
-        "group": "5f10cab10122c8a2",
-        "order": 4,
-        "width": 2,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "{\"run\":true}",
-        "onvalueType": "json",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "{\"run\":false}",
-        "offvalueType": "json",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 330,
-        "y": 440,
-        "wires": [
-            [
-                "a3014e30c64ba754"
-            ]
-        ]
-    },
-    {
-        "id": "542afd39bed67724",
-        "type": "debug",
-        "z": "f58570a26e45bbdc",
-        "name": "home /datetime",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "487905fb34a8ea49",
-        "type": "debug",
-        "z": "f58570a26e45bbdc",
-        "name": "home /cmd",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "6154c882050ecc47",
-        "type": "debug",
-        "z": "2f589c1fa72f19be",
-        "name": "MQTT /sensors",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "67b507a3826e21a0",
-        "type": "mqtt in",
-        "z": "2f589c1fa72f19be",
-        "name": "",
-        "topic": "unipr/sistemb/sensors",
-        "qos": "0",
-        "datatype": "json",
-        "broker": "e7518674fd285e30",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 220,
-        "y": 200,
-        "wires": [
-            [
-                "6154c882050ecc47",
-                "34044a998f1267ae",
-                "ff26227bcf240bf3"
-            ]
-        ]
-    },
-    {
-        "id": "e505a53fc78b9d5d",
-        "type": "ui_chart",
-        "z": "2f589c1fa72f19be",
-        "name": "",
-        "group": "4ab556e815260d6e",
-        "order": 7,
+        "order": 0,
         "width": 0,
         "height": 0,
-        "label": "Temperature chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm:ss",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": true,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "5",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 790,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "34044a998f1267ae",
-        "type": "function",
-        "z": "2f589c1fa72f19be",
-        "name": "chart generator",
-        "func": "msg = {\n        topic:\"temperature\",\n        payload: msg.payload.sensors.temperature,\n        timestamp: msg.payload.timestamp\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 500,
-        "y": 200,
-        "wires": [
-            [
-                "e505a53fc78b9d5d",
-                "c4bf521f46db9309"
-            ]
-        ]
-    },
-    {
-        "id": "c4bf521f46db9309",
-        "type": "debug",
-        "z": "2f589c1fa72f19be",
-        "name": "chart data",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "ff26227bcf240bf3",
-        "type": "link out",
-        "z": "2f589c1fa72f19be",
-        "name": "to log",
-        "mode": "link",
-        "links": [
-            "40ead3aa7034bcca"
-        ],
-        "x": 435,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "aa81207cb2f53d88",
-        "type": "ui_button",
-        "z": "2f589c1fa72f19be",
-        "name": "",
-        "group": "4ab556e815260d6e",
-        "order": 9,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "Clear",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "[]",
-        "payloadType": "json",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 530,
-        "y": 280,
-        "wires": [
-            [
-                "e505a53fc78b9d5d"
-            ]
-        ]
-    },
-    {
-        "id": "e96d0db5228ac0db",
-        "type": "ui_table",
-        "z": "464086673e62efae",
-        "group": "5f10cab10122c8a2",
-        "name": "",
-        "order": 7,
-        "width": 10,
-        "height": 10,
-        "columns": [
-            {
-                "field": "timestamp",
-                "title": "timestamp",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "date",
-                "title": "date",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "temperature",
-                "title": "temperature",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
+        "columns": [],
         "outputs": 0,
         "cts": false,
-        "x": 650,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "40ead3aa7034bcca",
-        "type": "link in",
-        "z": "464086673e62efae",
-        "name": "from /sensors",
-        "links": [
-            "ff26227bcf240bf3"
-        ],
-        "x": 255,
-        "y": 120,
-        "wires": [
-            [
-                "7b02e03953c3e5f4",
-                "6a0680535503d75c"
-            ]
-        ]
-    },
-    {
-        "id": "7b02e03953c3e5f4",
-        "type": "function",
-        "z": "464086673e62efae",
-        "name": "parser",
-        "func": "var d = new Date(msg.payload.timestamp);\nvar date =  d.getDate() + '/'\n            + (d.getMonth()+1) + '/'\n            + d.getFullYear() + \" \"\n            + d.getHours() + ':'\n            + d.getMinutes() + ':'\n            + d.getSeconds();\nmsg.payload = {\n    command: \"addRow\",\n    arguments: [\n        {\n            \"timestamp\": msg.payload.timestamp,\n            \"date\": date,\n            \"temperature\": msg.payload.sensors.temperature\n        },\n    ],\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 160,
-        "wires": [
-            [
-                "e96d0db5228ac0db"
-            ]
-        ]
-    },
-    {
-        "id": "6625ed02ded0af14",
-        "type": "ui_button",
-        "z": "464086673e62efae",
-        "name": "",
-        "group": "5f10cab10122c8a2",
-        "order": 9,
-        "width": 4,
-        "height": 1,
-        "passthru": false,
-        "label": "Clear",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "[]",
-        "payloadType": "json",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 450,
-        "y": 240,
-        "wires": [
-            [
-                "e96d0db5228ac0db"
-            ]
-        ]
-    },
-    {
-        "id": "6a0680535503d75c",
-        "type": "debug",
-        "z": "464086673e62efae",
-        "name": "MQTT /sensors",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
+        "x": 470,
         "y": 100,
         "wires": []
     }
