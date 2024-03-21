@@ -30,6 +30,14 @@
         "info": ""
     },
     {
+        "id": "82e6cfb985ead96b",
+        "type": "tab",
+        "label": "Configurable timer",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "ff263058e6c863b7",
         "type": "sqlitedb",
         "db": "/home/Greater/Desktop/energymeter.db",
@@ -146,11 +154,11 @@
     {
         "id": "590f4fd2e0f3281c",
         "type": "ui_group",
-        "name": "Info",
+        "name": "System Info",
         "tab": "c3e890fe74e7f044",
         "order": 1,
         "disp": true,
-        "width": "8",
+        "width": "7",
         "collapse": false,
         "className": ""
     },
@@ -175,22 +183,13 @@
         "hidden": false
     },
     {
-        "id": "1e6e2f3d5466b64e",
-        "type": "ui_tab",
-        "name": "Executed",
-        "icon": "dashboard",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "be26d6ac96b8cc75",
         "type": "ui_group",
-        "name": "Manage Database",
+        "name": "Datetime",
         "tab": "c3e890fe74e7f044",
         "order": 2,
         "disp": true,
-        "width": "8",
+        "width": "7",
         "collapse": false,
         "className": ""
     },
@@ -221,7 +220,7 @@
         "type": "ui_group",
         "name": "Log Readings",
         "tab": "c3e890fe74e7f044",
-        "order": 4,
+        "order": 6,
         "disp": true,
         "width": "16",
         "collapse": true,
@@ -232,21 +231,11 @@
         "type": "ui_group",
         "name": "Log Test",
         "tab": "c3e890fe74e7f044",
-        "order": 3,
+        "order": 5,
         "disp": true,
         "width": "16",
         "collapse": true,
         "className": ""
-    },
-    {
-        "id": "8fcd1d7c9ef9afa4",
-        "type": "ui_spacer",
-        "z": "6ab738f287ab7ef9",
-        "name": "spacer",
-        "group": "be26d6ac96b8cc75",
-        "order": 3,
-        "width": "3",
-        "height": "3"
     },
     {
         "id": "1064860f840f2c27",
@@ -260,16 +249,6 @@
         "className": ""
     },
     {
-        "id": "0572c6dbb8814141",
-        "type": "ui_spacer",
-        "z": "6ab738f287ab7ef9",
-        "name": "spacer",
-        "group": "6db24db1cd29db42",
-        "order": 2,
-        "width": 7,
-        "height": 1
-    },
-    {
         "id": "711a0d5a865d8c14",
         "type": "ui_spacer",
         "z": "6ab738f287ab7ef9",
@@ -278,6 +257,37 @@
         "order": 4,
         "width": 1,
         "height": 1
+    },
+    {
+        "id": "32099bfcf5223dd3",
+        "type": "ui_group",
+        "name": "Manage Database",
+        "tab": "c3e890fe74e7f044",
+        "order": 3,
+        "disp": false,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6588970f4a553412",
+        "type": "ui_spacer",
+        "z": "710558fa.25dab8",
+        "name": "spacer",
+        "group": "1064860f840f2c27",
+        "order": 2,
+        "width": "7",
+        "height": "2"
+    },
+    {
+        "id": "c43e07ff63c55613",
+        "type": "ui_spacer",
+        "z": "82e6cfb985ead96b",
+        "name": "spacer",
+        "group": "32099bfcf5223dd3",
+        "order": 1,
+        "width": "7",
+        "height": "1"
     },
     {
         "id": "3a3e92ea.365dde",
@@ -297,7 +307,8 @@
                 "4c8da7d223f3b678",
                 "783b4cb03d902192",
                 "19213cb6c9f6f8bf",
-                "2239eca02f96e47c"
+                "2239eca02f96e47c",
+                "063f3b97386db3d4"
             ]
         ]
     },
@@ -307,7 +318,7 @@
         "z": "c04dded60d457e0f",
         "mydb": "ff263058e6c863b7",
         "sqlquery": "fixed",
-        "sql": "CREATE TABLE IF NOT EXISTS readings(timestamp INTEGER UNIQUE, idd TEXT, current REAL, voltage REAL, power REAL);",
+        "sql": "CREATE TABLE IF NOT EXISTS readings(test_id TEST, timestamp INTEGER UNIQUE, current REAL, voltage REAL, power REAL);",
         "name": "create readings",
         "x": 380,
         "y": 180,
@@ -366,6 +377,47 @@
         ]
     },
     {
+        "id": "063f3b97386db3d4",
+        "type": "sqlite",
+        "z": "c04dded60d457e0f",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "SELECT\n    id\nFROM\n    test\nWHERE\n    stop IS NULL\n    AND\n    start IS NOT NULL\nORDER BY\n    created DESC;",
+        "name": "show tests",
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [
+                "76ed01cbae17aba7"
+            ]
+        ]
+    },
+    {
+        "id": "76ed01cbae17aba7",
+        "type": "change",
+        "z": "c04dded60d457e0f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "running",
+                "pt": "global",
+                "to": "payload[0].id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "17eada0e.06e1e6",
         "type": "function",
         "z": "710558fa.25dab8",
@@ -378,7 +430,7 @@
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "666b465.a3faeb8"
@@ -390,12 +442,12 @@
         "type": "debug",
         "z": "710558fa.25dab8",
         "name": "response",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
@@ -407,7 +459,7 @@
         "type": "debug",
         "z": "710558fa.25dab8",
         "name": "State",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -432,7 +484,7 @@
         "finalize": "",
         "libs": [],
         "x": 380,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "666b465.a3faeb8"
@@ -464,7 +516,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "INSERT INTO readings\n(timestamp,idd,current,voltage,power)\nvalues\n({{payload.timestamp}}*1000, \"{{payload.idd}}\", {{payload.current}}, {{payload.voltage}}, {{payload.power}});",
+        "template": "INSERT INTO readings\n(test_id,timestamp,current,voltage,power)\nvalues\n(\"{{global.running}}\", {{payload.timestamp}}, {{payload.current}}, {{payload.voltage}}, {{payload.power}});",
         "output": "str",
         "x": 460,
         "y": 540,
@@ -480,7 +532,7 @@
         "type": "function",
         "z": "710558fa.25dab8",
         "name": "parse",
-        "func": "var t = msg.payload.data.t;\nvar c = msg.payload.data.dps[\"18\"]/100;\nvar v = msg.payload.data.dps[\"20\"]/10;\nvar p = msg.payload.data.dps[\"19\"]/10;\nvar idd = msg.payload.deviceId;\n\nif (isNaN(c)) c = 'NULL';\nif (isNaN(v)) v = 'NULL';\nif (isNaN(p)) p = 'NULL';\nmsg.payload = {\n   timestamp: t,\n   idd: idd,\n   current: c,\n   voltage:v,\n   power: p\n}\n\nreturn msg;",
+        "func": "// var t = msg.payload.data.t;\nvar t = msg.timestamp;\nvar c = msg.payload.data.dps[\"18\"]/100;\nvar v = msg.payload.data.dps[\"20\"]/10;\nvar p = msg.payload.data.dps[\"19\"]/10;\nmsg.idd = msg.payload.deviceId;\n\nif (isNaN(c)) c = 'NULL';\nif (isNaN(v)) v = 'NULL';\nif (isNaN(p)) p = 'NULL';\nmsg.payload = {\n   timestamp: t,\n   current: c,\n   voltage:v,\n   power: p\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -492,7 +544,8 @@
         "wires": [
             [
                 "42b51b6353580ef8",
-                "5fbc9d89f02312ff"
+                "5fbc9d89f02312ff",
+                "c19d9bec3da31028"
             ]
         ],
         "info": "insert only present data, the ones absent set to NULL"
@@ -502,7 +555,7 @@
         "type": "debug",
         "z": "710558fa.25dab8",
         "name": "response object",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -537,10 +590,7 @@
         "z": "710558fa.25dab8",
         "name": "link to interface",
         "mode": "link",
-        "links": [
-            "3f4966d0.43d8fa",
-            "c023bf66bb5c99b9"
-        ],
+        "links": [],
         "x": 855,
         "y": 580,
         "wires": []
@@ -564,11 +614,12 @@
         "wires": [
             [
                 "d2982ffe.c64bb",
-                "7d445b680c51fa48"
+                "0e21c14fee408ff6"
             ],
             [
                 "1bc34034dcbdb384",
-                "8182c84583264e8b"
+                "8182c84583264e8b",
+                "8ea346b5c06c56b6"
             ]
         ]
     },
@@ -577,14 +628,14 @@
         "type": "switch",
         "z": "710558fa.25dab8",
         "name": "",
-        "property": "run",
+        "property": "running",
         "propertyType": "global",
         "rules": [
             {
-                "t": "true"
+                "t": "nnull"
             },
             {
-                "t": "false"
+                "t": "null"
             }
         ],
         "checkall": "true",
@@ -628,30 +679,11 @@
         "links": [
             "19213cb6c9f6f8bf"
         ],
-        "x": 265,
-        "y": 120,
+        "x": 165,
+        "y": 140,
         "wires": [
             [
                 "17eada0e.06e1e6"
-            ]
-        ]
-    },
-    {
-        "id": "c2842ee77f090925",
-        "type": "inject",
-        "z": "710558fa.25dab8",
-        "name": "Trigger refresh",
-        "props": [],
-        "repeat": "2",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 100,
-        "y": 200,
-        "wires": [
-            [
-                "3379d1c8c5452e4a"
             ]
         ]
     },
@@ -673,6 +705,180 @@
         "info": "",
         "x": 180,
         "y": 420,
+        "wires": []
+    },
+    {
+        "id": "0e21c14fee408ff6",
+        "type": "change",
+        "z": "710558fa.25dab8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "timestamp",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 340,
+        "wires": [
+            [
+                "7d445b680c51fa48"
+            ]
+        ]
+    },
+    {
+        "id": "3db6b347806ddbe3",
+        "type": "link in",
+        "z": "710558fa.25dab8",
+        "name": "acquire data",
+        "links": [
+            "e8ae2b5439c2b898"
+        ],
+        "x": 165,
+        "y": 200,
+        "wires": [
+            [
+                "3379d1c8c5452e4a"
+            ]
+        ]
+    },
+    {
+        "id": "8ea346b5c06c56b6",
+        "type": "switch",
+        "z": "710558fa.25dab8",
+        "name": "",
+        "property": "payload.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "CONNECTED",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "CONNECTED",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 770,
+        "y": 260,
+        "wires": [
+            [
+                "7c59aab1e73ea909"
+            ],
+            [
+                "69db3cbd525600ed"
+            ]
+        ]
+    },
+    {
+        "id": "7c59aab1e73ea909",
+        "type": "change",
+        "z": "710558fa.25dab8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "connected",
+                "pt": "global",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69db3cbd525600ed",
+        "type": "change",
+        "z": "710558fa.25dab8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "connected",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c19d9bec3da31028",
+        "type": "change",
+        "z": "710558fa.25dab8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "idd",
+                "pt": "global",
+                "to": "idd",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 640,
+        "wires": [
+            [
+                "3955d6e6efe649ab"
+            ]
+        ]
+    },
+    {
+        "id": "3955d6e6efe649ab",
+        "type": "ui_text",
+        "z": "710558fa.25dab8",
+        "group": "590f4fd2e0f3281c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "ID:",
+        "format": "{{msg.idd}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 630,
+        "y": 640,
         "wires": []
     },
     {
@@ -734,7 +940,7 @@
         "type": "debug",
         "z": "6ab738f287ab7ef9",
         "name": "form",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -742,8 +948,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 250,
-        "y": 60,
+        "x": 230,
+        "y": 80,
         "wires": []
     },
     {
@@ -754,8 +960,8 @@
         "sqlquery": "msg.topic",
         "sql": "CREATE TABLE IF NOT EXISTS readings(id INTEGER, timestamp INTEGER, location TEXT NOT NULL, temperature INTEGER, humidity INTEGER, co INTEGER);",
         "name": "insert new test",
-        "x": 760,
-        "y": 180,
+        "x": 720,
+        "y": 140,
         "wires": [
             [
                 "7215d99855411da3"
@@ -773,8 +979,8 @@
         "syntax": "mustache",
         "template": "INSERT INTO test\n(id,name,description,created)\nvalues\n(\"{{payload.id}}\", \"{{payload.name}}\", \"{{payload.desc}}\", {{payload.created}});",
         "output": "str",
-        "x": 560,
-        "y": 140,
+        "x": 520,
+        "y": 120,
         "wires": [
             [
                 "c1c1115b4885b7cc",
@@ -794,8 +1000,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
-        "y": 140,
+        "x": 290,
+        "y": 120,
         "wires": [
             [
                 "733099ba4732e7fe"
@@ -815,7 +1021,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
+        "x": 690,
         "y": 100,
         "wires": []
     },
@@ -826,7 +1032,7 @@
         "position": "dialog",
         "displayTime": "",
         "highlight": "red",
-        "sendall": true,
+        "sendall": false,
         "outputs": 1,
         "ok": "OK",
         "cancel": "",
@@ -834,8 +1040,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 450,
-        "y": 240,
+        "x": 430,
+        "y": 220,
         "wires": [
             []
         ]
@@ -849,8 +1055,8 @@
             "c1c1115b4885b7cc"
         ],
         "uncaught": false,
-        "x": 90,
-        "y": 240,
+        "x": 130,
+        "y": 220,
         "wires": [
             [
                 "9c9c8a0451e7d2bf"
@@ -870,7 +1076,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
                 "d5513f0cb0c5f692"
@@ -941,7 +1147,7 @@
         "outputs": 0,
         "cts": false,
         "x": 690,
-        "y": 400,
+        "y": 380,
         "wires": []
     },
     {
@@ -992,8 +1198,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 90,
-        "y": 460,
+        "x": 50,
+        "y": 400,
         "wires": [
             [
                 "ddf39df0a015aa5f",
@@ -1007,7 +1213,7 @@
         "type": "debug",
         "z": "6ab738f287ab7ef9",
         "name": "table setup",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1016,7 +1222,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 710,
-        "y": 320,
+        "y": 340,
         "wires": []
     },
     {
@@ -1028,7 +1234,7 @@
         "sql": "SELECT\n    id\nFROM\n    test\nWHERE\n    stop IS NULL\nORDER BY\n    created DESC;",
         "name": "show tests",
         "x": 270,
-        "y": 540,
+        "y": 500,
         "wires": [
             [
                 "2f5b69afc6554bd7",
@@ -1050,7 +1256,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 470,
-        "y": 500,
+        "y": 480,
         "wires": []
     },
     {
@@ -1073,30 +1279,12 @@
         "topicType": "msg",
         "className": "",
         "x": 620,
-        "y": 580,
+        "y": 520,
         "wires": [
             [
-                "4a49f59bacb98c81",
                 "3e56a3352670d246"
             ]
         ]
-    },
-    {
-        "id": "4a49f59bacb98c81",
-        "type": "debug",
-        "z": "6ab738f287ab7ef9",
-        "name": "selected id",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 540,
-        "wires": []
     },
     {
         "id": "3e56a3352670d246",
@@ -1106,7 +1294,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "id",
+                "p": "selected",
                 "pt": "global",
                 "to": "payload",
                 "tot": "msg"
@@ -1117,8 +1305,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 790,
-        "y": 620,
+        "x": 810,
+        "y": 520,
         "wires": [
             []
         ]
@@ -1136,7 +1324,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 580,
+        "y": 520,
         "wires": [
             [
                 "44d2556f9de63817"
@@ -1164,10 +1352,10 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 90,
-        "y": 840,
+        "y": 760,
         "wires": [
             [
-                "e262c2d2484d1f30"
+                "e4ab79c318188e97"
             ]
         ]
     },
@@ -1195,35 +1383,7 @@
         "y": 1020,
         "wires": [
             [
-                "fe68907f27e1dbb4",
-                "14ca936da9541740"
-            ]
-        ]
-    },
-    {
-        "id": "f3f885757e58b489",
-        "type": "change",
-        "z": "6ab738f287ab7ef9",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "run",
-                "pt": "global",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 840,
-        "wires": [
-            [
-                "4b1cca4651da5091"
+                "74d2dea6ed4c9087"
             ]
         ]
     },
@@ -1234,11 +1394,9 @@
         "name": "",
         "rules": [
             {
-                "t": "set",
-                "p": "run",
-                "pt": "global",
-                "to": "false",
-                "tot": "bool"
+                "t": "delete",
+                "p": "running",
+                "pt": "global"
             }
         ],
         "action": "",
@@ -1246,8 +1404,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
-        "y": 980,
+        "x": 1460,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -1260,11 +1418,12 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "start test",
-        "x": 660,
-        "y": 900,
+        "x": 760,
+        "y": 860,
         "wires": [
             [
-                "b9af4ba440595404"
+                "b9af4ba440595404",
+                "f3f885757e58b489"
             ]
         ]
     },
@@ -1277,10 +1436,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "UPDATE test\nSET\n    start = {{payload}}\nWHERE\n    id = \"{{global.id}}\";\n",
+        "template": "UPDATE test\nSET\n    start = {{payload}}\nWHERE\n    id = \"{{global.selected}}\";\n",
         "output": "str",
-        "x": 480,
-        "y": 880,
+        "x": 560,
+        "y": 820,
         "wires": [
             [
                 "c4b24f0fb0d52a06",
@@ -1301,8 +1460,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 650,
-        "y": 860,
+        "x": 750,
+        "y": 820,
         "wires": []
     },
     {
@@ -1313,12 +1472,13 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "stop test",
-        "x": 460,
-        "y": 1100,
+        "x": 1260,
+        "y": 980,
         "wires": [
             [
                 "abfebee53c9d352a",
-                "e8ef19036bc7ecba"
+                "e8ef19036bc7ecba",
+                "fe68907f27e1dbb4"
             ]
         ]
     },
@@ -1331,10 +1491,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "UPDATE test\nSET\n    stop = {{payload}}\nWHERE\n    id = \"{{global.id}}\";\n",
+        "template": "UPDATE test\nSET\n    stop = {{timestamp}}\nWHERE\n    id = \"{{global.running}}\";\n",
         "output": "str",
-        "x": 280,
-        "y": 1060,
+        "x": 1060,
+        "y": 940,
         "wires": [
             [
                 "9b8fa25fc567beda",
@@ -1355,8 +1515,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 450,
-        "y": 1020,
+        "x": 1250,
+        "y": 940,
         "wires": []
     },
     {
@@ -1376,8 +1536,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 440,
-        "y": 1180,
+        "x": 400,
+        "y": 1160,
         "wires": []
     },
     {
@@ -1386,17 +1546,17 @@
         "z": "6ab738f287ab7ef9",
         "name": "",
         "props": [],
-        "repeat": "1",
+        "repeat": "2",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 90,
+        "x": 70,
         "y": 1180,
         "wires": [
             [
                 "4b2978492053765f",
-                "231ab64c956872aa"
+                "37d1ca1624cd2ef0"
             ]
         ]
     },
@@ -1405,15 +1565,15 @@
         "type": "function",
         "z": "6ab738f287ab7ef9",
         "name": "set options",
-        "func": "if (global.get(\"id\") && global.get(\"run\")) {\n    msg.payload = global.get(\"id\")\n}\nelse {\n    msg.payload = \"-\"\n}\nreturn msg;",
+        "func": "if (global.get(\"running\")) {\n    msg.payload = global.get(\"running\")\n}\nelse {\n    msg.payload = \"-\"\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 1180,
+        "x": 250,
+        "y": 1160,
         "wires": [
             [
                 "740b46cbbc290c62"
@@ -1427,10 +1587,11 @@
         "name": "update table",
         "mode": "link",
         "links": [
-            "37da58eaa8f85a5a"
+            "37da58eaa8f85a5a",
+            "8503d27814f4f3f1"
         ],
-        "x": 755,
-        "y": 900,
+        "x": 875,
+        "y": 860,
         "wires": []
     },
     {
@@ -1441,7 +1602,8 @@
         "links": [
             "b9af4ba440595404",
             "abfebee53c9d352a",
-            "083990817029cb84"
+            "083990817029cb84",
+            "28df6d65cb31b643"
         ],
         "x": 125,
         "y": 360,
@@ -1458,10 +1620,11 @@
         "name": "update table",
         "mode": "link",
         "links": [
-            "37da58eaa8f85a5a"
+            "37da58eaa8f85a5a",
+            "8503d27814f4f3f1"
         ],
-        "x": 565,
-        "y": 1080,
+        "x": 1375,
+        "y": 940,
         "wires": []
     },
     {
@@ -1469,24 +1632,24 @@
         "type": "switch",
         "z": "6ab738f287ab7ef9",
         "name": "",
-        "property": "run",
+        "property": "running",
         "propertyType": "global",
         "rules": [
             {
-                "t": "true"
+                "t": "nnull"
             },
             {
-                "t": "false"
+                "t": "null"
             }
         ],
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 430,
-        "y": 1240,
+        "x": 230,
+        "y": 1220,
         "wires": [
             [
-                "30791ec2a3756706"
+                "231ab64c956872aa"
             ],
             [
                 "db4e2046126be54c"
@@ -1510,30 +1673,11 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 280,
-        "y": 1240,
+        "x": 420,
+        "y": 1200,
         "wires": [
             [
-                "37d1ca1624cd2ef0"
-            ]
-        ]
-    },
-    {
-        "id": "30791ec2a3756706",
-        "type": "template",
-        "z": "6ab738f287ab7ef9",
-        "name": "compose query",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "SELECT start\nFROM\n    test\nWHERE\n    id = \"{{global.id}}\";\n",
-        "output": "str",
-        "x": 600,
-        "y": 1220,
-        "wires": [
-            [
-                "5e16e9e9f9b7cc4b"
+                "6d4329f9d20ba005"
             ]
         ]
     },
@@ -1545,8 +1689,8 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "running time",
-        "x": 790,
-        "y": 1220,
+        "x": 730,
+        "y": 1200,
         "wires": [
             [
                 "e4f5170b741c6876"
@@ -1565,8 +1709,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 1340,
+        "x": 540,
+        "y": 1320,
         "wires": [
             [
                 "51117d39392e741e"
@@ -1582,8 +1726,8 @@
         "links": [
             "baeca8e31a1512a3"
         ],
-        "x": 565,
-        "y": 1120,
+        "x": 1375,
+        "y": 980,
         "wires": []
     },
     {
@@ -1595,7 +1739,7 @@
             "e8ef19036bc7ecba"
         ],
         "x": 125,
-        "y": 540,
+        "y": 500,
         "wires": [
             [
                 "d9dae8b61f5cc9b0"
@@ -1619,8 +1763,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 810,
-        "y": 1340,
+        "x": 750,
+        "y": 1280,
         "wires": []
     },
     {
@@ -1635,8 +1779,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 1260,
+        "x": 410,
+        "y": 1240,
         "wires": [
             [
                 "51117d39392e741e"
@@ -1652,7 +1796,7 @@
         "sql": "SELECT\n    id\nFROM\n    test\nORDER BY\n    created DESC;",
         "name": "show tests",
         "x": 270,
-        "y": 700,
+        "y": 640,
         "wires": [
             [
                 "5fdef0864ee79c28"
@@ -1672,7 +1816,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 700,
+        "y": 640,
         "wires": [
             [
                 "6a27f745cb7292da"
@@ -1699,7 +1843,7 @@
         "topicType": "msg",
         "className": "",
         "x": 630,
-        "y": 700,
+        "y": 640,
         "wires": [
             [
                 "3d888a8bc315c0e4"
@@ -1717,8 +1861,8 @@
             "ab6c68f80828f1de",
             "d3b97f4589322984"
         ],
-        "x": 895,
-        "y": 180,
+        "x": 855,
+        "y": 140,
         "wires": []
     },
     {
@@ -1746,7 +1890,7 @@
             "7215d99855411da3"
         ],
         "x": 125,
-        "y": 580,
+        "y": 540,
         "wires": [
             [
                 "d9dae8b61f5cc9b0"
@@ -1762,7 +1906,7 @@
             "7215d99855411da3"
         ],
         "x": 125,
-        "y": 700,
+        "y": 640,
         "wires": [
             [
                 "8f29f6b717d27a52"
@@ -1789,7 +1933,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 700,
+        "y": 640,
         "wires": [
             []
         ]
@@ -1800,7 +1944,7 @@
         "z": "6ab738f287ab7ef9",
         "name": "",
         "group": "1064860f840f2c27",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -1830,8 +1974,8 @@
         "sqlquery": "msg.topic",
         "sql": "SELECT\n    (start,stop)\nFROM\n    test\nWHERE\n    id = {{flow.delete}};",
         "name": "select start-stop to delete",
-        "x": 590,
-        "y": 1440,
+        "x": 510,
+        "y": 1500,
         "wires": [
             [
                 "77aa0d610b3647ba",
@@ -1850,8 +1994,8 @@
         "syntax": "mustache",
         "template": "SELECT\n    created,start,stop\nFROM\n    test\nWHERE\n    id = \"{{global.delete}}\";",
         "output": "str",
-        "x": 400,
-        "y": 1440,
+        "x": 320,
+        "y": 1500,
         "wires": [
             [
                 "18afe869fa128c54"
@@ -1869,8 +2013,8 @@
         "syntax": "mustache",
         "template": "DELETE FROM\n    test\nWHERE\n    id = \"{{global.delete}}\";",
         "output": "str",
-        "x": 800,
-        "y": 1440,
+        "x": 720,
+        "y": 1500,
         "wires": [
             [
                 "7c5d8f62e4ade049"
@@ -1885,8 +2029,8 @@
         "sqlquery": "msg.topic",
         "sql": "SELECT\n    (start,stop)\nFROM\n    test\nWHERE\n    id = {{flow.delete}};",
         "name": "DELETE between start-stop",
-        "x": 1020,
-        "y": 1460,
+        "x": 940,
+        "y": 1500,
         "wires": [
             [
                 "083990817029cb84"
@@ -1898,33 +2042,27 @@
         "type": "switch",
         "z": "6ab738f287ab7ef9",
         "name": "",
-        "property": "run",
+        "property": "running",
         "propertyType": "global",
         "rules": [
             {
-                "t": "true"
+                "t": "nnull"
             },
             {
-                "t": "false"
-            },
-            {
-                "t": "empty"
+                "t": "null"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 3,
-        "x": 230,
-        "y": 840,
+        "outputs": 2,
+        "x": 350,
+        "y": 800,
         "wires": [
             [
-                "ce630c9b34dd9868"
+                "3b66c59dbfcbc710"
             ],
             [
-                "f3f885757e58b489"
-            ],
-            [
-                "f3f885757e58b489"
+                "4b1cca4651da5091"
             ]
         ]
     },
@@ -1935,7 +2073,7 @@
         "position": "dialog",
         "displayTime": "",
         "highlight": "red",
-        "sendall": true,
+        "sendall": false,
         "outputs": 1,
         "ok": "OK",
         "cancel": "",
@@ -1950,44 +2088,6 @@
         ]
     },
     {
-        "id": "ce630c9b34dd9868",
-        "type": "template",
-        "z": "6ab738f287ab7ef9",
-        "name": "",
-        "field": "topic",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "A test is already running!",
-        "output": "str",
-        "x": 460,
-        "y": 780,
-        "wires": [
-            [
-                "fa88a14497e71ad2"
-            ]
-        ]
-    },
-    {
-        "id": "fa88a14497e71ad2",
-        "type": "template",
-        "z": "6ab738f287ab7ef9",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "Please stop the test with ID {{global.id}}",
-        "output": "str",
-        "x": 600,
-        "y": 780,
-        "wires": [
-            [
-                "0dd2d017c4cfe28a"
-            ]
-        ]
-    },
-    {
         "id": "77aa0d610b3647ba",
         "type": "function",
         "z": "6ab738f287ab7ef9",
@@ -1999,8 +2099,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
-        "y": 1480,
+        "x": 720,
+        "y": 1540,
         "wires": [
             [
                 "7c5d8f62e4ade049"
@@ -2011,23 +2111,18 @@
         "id": "083990817029cb84",
         "type": "link out",
         "z": "6ab738f287ab7ef9",
-        "name": "update table",
+        "name": "update after delete",
         "mode": "link",
         "links": [
-            "37da58eaa8f85a5a"
+            "280aa25a5536a516",
+            "37da58eaa8f85a5a",
+            "8503d27814f4f3f1",
+            "de4db42e0821b068",
+            "22d1c32e4f96c4d6",
+            "1c667f85ad7ffa2e"
         ],
-        "x": 1175,
-        "y": 1460,
-        "wires": []
-    },
-    {
-        "id": "da851be70399499a",
-        "type": "comment",
-        "z": "6ab738f287ab7ef9",
-        "name": "insert a check as the start",
-        "info": "",
-        "x": 150,
-        "y": 960,
+        "x": 1105,
+        "y": 1520,
         "wires": []
     },
     {
@@ -2037,7 +2132,7 @@
         "position": "dialog",
         "displayTime": "3",
         "highlight": "",
-        "sendall": true,
+        "sendall": false,
         "outputs": 1,
         "ok": "OK",
         "cancel": "NO",
@@ -2045,8 +2140,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 210,
-        "y": 1480,
+        "x": 390,
+        "y": 1440,
         "wires": [
             [
                 "013a2b04e6cdc745"
@@ -2057,15 +2152,15 @@
         "id": "49ebab8013a1c36b",
         "type": "function",
         "z": "6ab738f287ab7ef9",
-        "name": "function 2",
-        "func": "msg.topic = \"Are you sure to delete the test?\";\nmsg.payload = \"The ID: \" + global.get(\"delete\") + \" and all the related data will be removed definetly\";\nreturn msg;",
+        "name": "notification text",
+        "func": "msg.topic = \"Do you want to delete '\"+ global.get(\"delete\") +\"'?\";\nmsg.payload = \"The test and all the related data will be removed definetly\";\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 200,
+        "x": 220,
         "y": 1440,
         "wires": [
             [
@@ -2095,24 +2190,529 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 190,
-        "y": 1520,
+        "x": 170,
+        "y": 1540,
         "wires": [
             [
-                "ae2452b3e78e800d"
+                "ae2452b3e78e800d",
+                "ba4218c8d62b2e9b"
             ],
             []
+        ]
+    },
+    {
+        "id": "74d2dea6ed4c9087",
+        "type": "switch",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "property": "running",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 1020,
+        "wires": [
+            [
+                "aadf84990a639716"
+            ],
+            [
+                "4185cc43cf5769f9"
+            ]
+        ]
+    },
+    {
+        "id": "f61818877dae1543",
+        "type": "ui_toast",
+        "z": "6ab738f287ab7ef9",
+        "position": "dialog",
+        "displayTime": "",
+        "highlight": "red",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "NO",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 610,
+        "y": 1000,
+        "wires": [
+            [
+                "c943d0496fc36abf"
+            ]
+        ]
+    },
+    {
+        "id": "37b223a89a9044fd",
+        "type": "ui_toast",
+        "z": "6ab738f287ab7ef9",
+        "position": "dialog",
+        "displayTime": "",
+        "highlight": "red",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 610,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "280aa25a5536a516",
+        "type": "link in",
+        "z": "6ab738f287ab7ef9",
+        "name": "update dropdown",
+        "links": [
+            "083990817029cb84"
+        ],
+        "x": 125,
+        "y": 680,
+        "wires": [
+            [
+                "8f29f6b717d27a52"
+            ]
+        ]
+    },
+    {
+        "id": "c943d0496fc36abf",
+        "type": "switch",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 750,
+        "y": 1000,
+        "wires": [
+            [
+                "b4da7d46f7dd9638"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8503d27814f4f3f1",
+        "type": "link in",
+        "z": "6ab738f287ab7ef9",
+        "name": "update occurred",
+        "links": [
+            "b9af4ba440595404",
+            "abfebee53c9d352a",
+            "083990817029cb84",
+            "28df6d65cb31b643"
+        ],
+        "x": 125,
+        "y": 460,
+        "wires": [
+            [
+                "d9dae8b61f5cc9b0"
+            ]
+        ]
+    },
+    {
+        "id": "ba4218c8d62b2e9b",
+        "type": "switch",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "property": "delete",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "id",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 310,
+        "y": 1560,
+        "wires": [
+            [
+                "089d8b34a622df9a"
+            ]
+        ]
+    },
+    {
+        "id": "089d8b34a622df9a",
+        "type": "change",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "id",
+                "pt": "global"
+            },
+            {
+                "t": "delete",
+                "p": "run",
+                "pt": "global"
+            },
+            {
+                "t": "delete",
+                "p": "delete",
+                "pt": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b4da7d46f7dd9638",
+        "type": "switch",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "property": "selected",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "running",
+                "vt": "global"
+            },
+            {
+                "t": "neq",
+                "v": "running",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 890,
+        "y": 980,
+        "wires": [
+            [
+                "14ca936da9541740"
+            ],
+            [
+                "ece7c398e2e415cb"
+            ]
+        ]
+    },
+    {
+        "id": "5ba99b5dec01dcac",
+        "type": "ui_toast",
+        "z": "6ab738f287ab7ef9",
+        "position": "dialog",
+        "displayTime": "",
+        "highlight": "red",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 1070,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d4329f9d20ba005",
+        "type": "template",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "SELECT start\nFROM\n    test\nWHERE\n    id = \"{{global.running}}\";",
+        "output": "str",
+        "x": 580,
+        "y": 1200,
+        "wires": [
+            [
+                "5e16e9e9f9b7cc4b"
+            ]
+        ]
+    },
+    {
+        "id": "4185cc43cf5769f9",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "notification text",
+        "func": "msg.topic = \"No running test!\";\nmsg.payload = \"Nothing to be stopped\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1040,
+        "wires": [
+            [
+                "37b223a89a9044fd"
+            ]
+        ]
+    },
+    {
+        "id": "aadf84990a639716",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "notification text",
+        "func": "msg.timestamp = msg.payload;\nmsg.topic = \"Do you really want to stop the test?\";\nmsg.payload = \"'\" + global.get(\"selected\") + \"'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1000,
+        "wires": [
+            [
+                "f61818877dae1543"
+            ]
+        ]
+    },
+    {
+        "id": "ece7c398e2e415cb",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "notification text",
+        "func": "msg.topic = \"The test is not running!\";\nmsg.payload = \"'\" + global.get(\"selected\") + \"'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 1000,
+        "wires": [
+            [
+                "5ba99b5dec01dcac"
+            ]
+        ]
+    },
+    {
+        "id": "3b66c59dbfcbc710",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "notification text",
+        "func": "msg.topic = \"A test is already running!\";\nmsg.payload = \"'\" + global.get(\"running\") + \"'\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 780,
+        "wires": [
+            [
+                "0dd2d017c4cfe28a"
+            ]
+        ]
+    },
+    {
+        "id": "f3f885757e58b489",
+        "type": "change",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "running",
+                "pt": "global",
+                "to": "selected",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d4df1c4bc49ba96",
+        "type": "comment",
+        "z": "6ab738f287ab7ef9",
+        "name": "!",
+        "info": "",
+        "x": 850,
+        "y": 1820,
+        "wires": []
+    },
+    {
+        "id": "e4ab79c318188e97",
+        "type": "switch",
+        "z": "6ab738f287ab7ef9",
+        "name": "",
+        "property": "connected",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 230,
+        "y": 760,
+        "wires": [
+            [
+                "972447b77a3fe393"
+            ],
+            [
+                "e262c2d2484d1f30"
+            ]
+        ]
+    },
+    {
+        "id": "972447b77a3fe393",
+        "type": "function",
+        "z": "6ab738f287ab7ef9",
+        "name": "notification text",
+        "func": "msg.topic = \"Error!\";\nmsg.payload = \"The smart socket is not connected!\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 720,
+        "wires": [
+            [
+                "592fc30f9e983724"
+            ]
+        ]
+    },
+    {
+        "id": "592fc30f9e983724",
+        "type": "ui_toast",
+        "z": "6ab738f287ab7ef9",
+        "position": "dialog",
+        "displayTime": "",
+        "highlight": "red",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 630,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "de4db42e0821b068",
+        "type": "link in",
+        "z": "6ab738f287ab7ef9",
+        "name": "link in 1",
+        "links": [
+            "083990817029cb84"
+        ],
+        "x": 125,
+        "y": 280,
+        "wires": [
+            [
+                "ddf39df0a015aa5f"
+            ]
+        ]
+    },
+    {
+        "id": "22d1c32e4f96c4d6",
+        "type": "link in",
+        "z": "6ab738f287ab7ef9",
+        "name": "link in 2",
+        "links": [
+            "083990817029cb84"
+        ],
+        "x": 125,
+        "y": 580,
+        "wires": [
+            [
+                "d9dae8b61f5cc9b0"
+            ]
+        ]
+    },
+    {
+        "id": "1c667f85ad7ffa2e",
+        "type": "link in",
+        "z": "6ab738f287ab7ef9",
+        "name": "link in 3",
+        "links": [
+            "083990817029cb84"
+        ],
+        "x": 125,
+        "y": 720,
+        "wires": [
+            [
+                "8f29f6b717d27a52"
+            ]
         ]
     },
     {
         "id": "cd093fbb43c2cfe8",
         "type": "sqlite",
         "z": "d3b4c2e1.c71fb",
+        "d": true,
         "mydb": "ff263058e6c863b7",
         "sqlquery": "fixed",
         "sql": "SELECT DISTINCT idd FROM readings;",
         "name": "Select idds",
-        "x": 350,
+        "x": 310,
         "y": 100,
         "wires": [
             [
@@ -2124,6 +2724,7 @@
         "id": "fc2906bfda839451",
         "type": "split",
         "z": "d3b4c2e1.c71fb",
+        "d": true,
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -2131,7 +2732,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 490,
+        "x": 470,
         "y": 100,
         "wires": [
             [
@@ -2143,21 +2744,22 @@
         "id": "e4021d5905842f4a",
         "type": "ui_text",
         "z": "d3b4c2e1.c71fb",
+        "d": true,
         "group": "590f4fd2e0f3281c",
         "order": 1,
-        "width": 8,
-        "height": 1,
+        "width": 0,
+        "height": 0,
         "name": "",
         "label": "ID:",
-        "format": "{{msg.payload.idd}}",
+        "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
         "style": false,
         "font": "",
         "fontSize": "",
         "color": "#000000",
-        "x": 650,
-        "y": 180,
+        "x": 810,
+        "y": 100,
         "wires": []
     },
     {
@@ -2165,9 +2767,9 @@
         "type": "ui_text",
         "z": "d3b4c2e1.c71fb",
         "group": "590f4fd2e0f3281c",
-        "order": 2,
-        "width": 8,
-        "height": 1,
+        "order": 3,
+        "width": 0,
+        "height": 0,
         "name": "",
         "label": "Last seen:",
         "format": "{{msg.umanDate}}",
@@ -2177,8 +2779,8 @@
         "font": "",
         "fontSize": "",
         "color": "#000000",
-        "x": 750,
-        "y": 260,
+        "x": 830,
+        "y": 180,
         "wires": []
     },
     {
@@ -2190,10 +2792,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SELECT\n    timestamp\nFROM\n    readings\nWHERE\n    (idd = \"{{payload.idd}}\")\nORDER BY\n    timestamp DESC;",
+        "template": "SELECT\n    timestamp\nFROM\n    readings\nORDER BY\n    timestamp DESC;",
         "output": "str",
-        "x": 180,
-        "y": 260,
+        "x": 320,
+        "y": 180,
         "wires": [
             [
                 "4edcf6ebfaea62ac"
@@ -2208,8 +2810,8 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "SELECT last seen",
-        "x": 390,
-        "y": 260,
+        "x": 510,
+        "y": 180,
         "wires": [
             [
                 "53e0b3416f6fbba5"
@@ -2228,8 +2830,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 260,
+        "x": 680,
+        "y": 180,
         "wires": [
             [
                 "5ac6deb431e8b8c2"
@@ -2245,10 +2847,10 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "SELECT\n    *\nFROM\n    readings\nWHERE\n    (idd = \"{{global.idd}}\")\nORDER BY\n    timestamp DESC;",
+        "template": "SELECT\n    *\nFROM\n    readings\nORDER BY\n    timestamp DESC\nLIMIT \n    50;",
         "output": "str",
         "x": 360,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "8cc0cf9de79ab0de"
@@ -2264,7 +2866,7 @@
         "sql": "",
         "name": "SELECT * readings",
         "x": 570,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "59cd071b0eb34b7c"
@@ -2283,7 +2885,7 @@
         "template": "SELECT\n    *\nFROM\n    test\nORDER BY\n    created DESC;",
         "output": "str",
         "x": 360,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "93e43cd88db8f97f"
@@ -2299,7 +2901,7 @@
         "sql": "",
         "name": "SELECT * test",
         "x": 560,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "405014bf685aeebf"
@@ -2312,13 +2914,13 @@
         "z": "d3b4c2e1.c71fb",
         "group": "5cd2e94ce01fda57",
         "name": "readings",
-        "order": 1,
-        "width": "16",
-        "height": "8",
+        "order": 2,
+        "width": 16,
+        "height": 8,
         "columns": [
             {
-                "field": "timestamp",
-                "title": "Timestamp",
+                "field": "test_id",
+                "title": "ID test",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
@@ -2327,8 +2929,8 @@
                 }
             },
             {
-                "field": "idd",
-                "title": "ID device",
+                "field": "timestamp",
+                "title": "Timestamp",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
@@ -2370,7 +2972,7 @@
         "outputs": 0,
         "cts": false,
         "x": 760,
-        "y": 320,
+        "y": 300,
         "wires": []
     },
     {
@@ -2379,9 +2981,9 @@
         "z": "d3b4c2e1.c71fb",
         "group": "e438d182788d62ed",
         "name": "test",
-        "order": 1,
-        "width": "16",
-        "height": "6",
+        "order": 2,
+        "width": 16,
+        "height": 6,
         "columns": [
             {
                 "field": "id",
@@ -2447,13 +3049,14 @@
         "outputs": 0,
         "cts": false,
         "x": 750,
-        "y": 380,
+        "y": 360,
         "wires": []
     },
     {
         "id": "98213513e6bcf571",
         "type": "inject",
         "z": "d3b4c2e1.c71fb",
+        "d": true,
         "name": "",
         "props": [],
         "repeat": "3600",
@@ -2473,6 +3076,7 @@
         "id": "e36b5f2435b24c87",
         "type": "change",
         "z": "d3b4c2e1.c71fb",
+        "d": true,
         "name": "",
         "rules": [
             {
@@ -2481,6 +3085,13 @@
                 "pt": "global",
                 "to": "payload.idd",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "idd",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -2488,10 +3099,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 670,
+        "x": 640,
         "y": 100,
         "wires": [
-            []
+            [
+                "e4021d5905842f4a"
+            ]
         ]
     },
     {
@@ -2509,34 +3122,6 @@
         "y": 180,
         "wires": [
             [
-                "37167a8a6acb8af7"
-            ]
-        ]
-    },
-    {
-        "id": "37167a8a6acb8af7",
-        "type": "change",
-        "z": "d3b4c2e1.c71fb",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.idd",
-                "pt": "msg",
-                "to": "idd",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 180,
-        "wires": [
-            [
-                "e4021d5905842f4a",
                 "0d9dcaab202adb8b"
             ]
         ]
@@ -2553,7 +3138,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 150,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "ba924c827655ed51",
@@ -2567,7 +3152,7 @@
         "z": "d3b4c2e1.c71fb",
         "name": "",
         "group": "e438d182788d62ed",
-        "order": 3,
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2582,7 +3167,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 140,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "7334e0ba394f6d85"
@@ -2595,7 +3180,7 @@
         "z": "d3b4c2e1.c71fb",
         "name": "",
         "group": "5cd2e94ce01fda57",
-        "order": 3,
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -2610,7 +3195,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 140,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "ba924c827655ed51"
@@ -2629,8 +3214,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 600,
+        "x": 310,
+        "y": 540,
         "wires": [
             [
                 "34dc99e5.495466"
@@ -2647,8 +3232,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 650,
-        "y": 640,
+        "x": 670,
+        "y": 560,
         "wires": []
     },
     {
@@ -2663,8 +3248,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 490,
-        "y": 580,
+        "x": 500,
+        "y": 520,
         "wires": [
             [
                 "98261154.3006"
@@ -2676,10 +3261,19 @@
         "type": "catch",
         "z": "d3b4c2e1.c71fb",
         "name": "",
-        "scope": null,
+        "scope": [
+            "f31a598d.9fd2c8",
+            "98261154.3006",
+            "34dc99e5.495466",
+            "3b8014a.86ad8ec",
+            "67ecfa7f.3f0e24",
+            "7db57965.76d468",
+            "ece06122.7e762",
+            "928b9f99910174b2"
+        ],
         "uncaught": false,
-        "x": 120,
-        "y": 680,
+        "x": 130,
+        "y": 600,
         "wires": [
             [
                 "3b8014a.86ad8ec",
@@ -2699,8 +3293,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 680,
+        "x": 520,
+        "y": 600,
         "wires": [
             [
                 "98261154.3006"
@@ -2719,7 +3313,7 @@
         "complete": "true",
         "targetType": "full",
         "x": 270,
-        "y": 720,
+        "y": 640,
         "wires": []
     },
     {
@@ -2731,8 +3325,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 130,
-        "y": 600,
+        "x": 140,
+        "y": 540,
         "wires": [
             [
                 "f31a598d.9fd2c8"
@@ -2744,12 +3338,12 @@
         "type": "ui_button",
         "z": "d3b4c2e1.c71fb",
         "name": "",
-        "group": "be26d6ac96b8cc75",
-        "order": 1,
-        "width": "4",
-        "height": "1",
+        "group": "32099bfcf5223dd3",
+        "order": 2,
+        "width": 0,
+        "height": 0,
         "passthru": false,
-        "label": "Download",
+        "label": "Download Database",
         "tooltip": "",
         "color": "black",
         "bgcolor": "orange",
@@ -2759,33 +3353,12 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 120,
-        "y": 800,
+        "x": 140,
+        "y": 1300,
         "wires": [
             [
                 "ece06122.7e762"
             ]
-        ]
-    },
-    {
-        "id": "5e1f0081.6dc3c",
-        "type": "ui_template",
-        "z": "d3b4c2e1.c71fb",
-        "group": "be26d6ac96b8cc75",
-        "name": "window redirect",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(data) {\n        if (data == \"energymeter.db\"){\n            window.location.href = \"/files/energymeter.db\";\n        }\n    });\n})(scope);\n</script>",
-        "storeOutMessages": false,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 480,
-        "y": 800,
-        "wires": [
-            []
         ]
     },
     {
@@ -2805,12 +3378,945 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 280,
-        "y": 800,
+        "x": 360,
+        "y": 1320,
         "wires": [
             [
-                "5e1f0081.6dc3c"
+                "fee4a5a25262bf55"
             ]
         ]
+    },
+    {
+        "id": "523e0d3200786186",
+        "type": "ui_text",
+        "z": "d3b4c2e1.c71fb",
+        "group": "be26d6ac96b8cc75",
+        "order": 1,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Current datetime:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 610,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "39011c23b0657559",
+        "type": "function",
+        "z": "d3b4c2e1.c71fb",
+        "name": "add umanDate of creation",
+        "func": "const data = new Date(msg.payload);\nconst umanDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n                (((data.getMonth()+1) < 10 ? '0' : '') + (data.getMonth()+1)) + \"/\" +\n                data.getFullYear() + \" \" +\n                ((data.getHours() < 10 ? '0' : '') + data.getHours()) + \":\" +\n                ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes())  + \":\" +\n                ((data.getSeconds() < 10 ? '0' : '') + data.getSeconds());\nmsg.payload = umanDate;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 840,
+        "wires": [
+            [
+                "523e0d3200786186"
+            ]
+        ]
+    },
+    {
+        "id": "48df0cdcfbb8b82c",
+        "type": "inject",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 840,
+        "wires": [
+            [
+                "39011c23b0657559"
+            ]
+        ]
+    },
+    {
+        "id": "27f4b161325daa8c",
+        "type": "ui_form",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "label": "Set datetime",
+        "group": "be26d6ac96b8cc75",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Date",
+                "value": "date",
+                "type": "date",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Time",
+                "value": "time",
+                "type": "time",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "date": "",
+            "time": ""
+        },
+        "payload": "",
+        "submit": "set",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "x": 130,
+        "y": 920,
+        "wires": [
+            [
+                "3068293f918e8287"
+            ]
+        ]
+    },
+    {
+        "id": "3068293f918e8287",
+        "type": "function",
+        "z": "d3b4c2e1.c71fb",
+        "name": "function 3",
+        "func": "var date = msg.payload.date.split(\"T\");\nvar localDate = new Date(date);\nlocalDate = localDate.toLocaleDateString();\nlocalDate = localDate.split(\"/\");\nvar formattedLocalDate = localDate[2].concat(\"-\", localDate[1], \"-\", localDate[0]);\n\nvar time = msg.payload.time.split(\"T\");\nvar datetime = formattedLocalDate.concat(\"T\", time[1]);\n\nmsg.payload.formattedLocalDate = formattedLocalDate;\nmsg.payload.datetime = datetime;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 920,
+        "wires": [
+            [
+                "be5bbf9f77d2850c"
+            ]
+        ]
+    },
+    {
+        "id": "be5bbf9f77d2850c",
+        "type": "exec",
+        "z": "d3b4c2e1.c71fb",
+        "command": "sudo date -s ",
+        "addpay": "payload.datetime",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 470,
+        "y": 920,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c581d369c3ea7dbe",
+        "type": "exec",
+        "z": "d3b4c2e1.c71fb",
+        "command": "vcgencmd measure_temp",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 350,
+        "y": 1000,
+        "wires": [
+            [
+                "a6a9068524bff789"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c1364b261241ec2f",
+        "type": "inject",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1000,
+        "wires": [
+            [
+                "c581d369c3ea7dbe"
+            ]
+        ]
+    },
+    {
+        "id": "c13fed97744df725",
+        "type": "ui_text",
+        "z": "d3b4c2e1.c71fb",
+        "group": "590f4fd2e0f3281c",
+        "order": 4,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "CPU temperature:",
+        "format": "{{msg.payload}} °C",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 730,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "a6a9068524bff789",
+        "type": "function",
+        "z": "d3b4c2e1.c71fb",
+        "name": "function 4",
+        "func": "var temp = msg.payload.split(\"=\");\ntemp = temp[1].split(\"'\");\n\nmsg.payload = temp[0];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 980,
+        "wires": [
+            [
+                "c13fed97744df725"
+            ]
+        ]
+    },
+    {
+        "id": "48ae0814c050ef96",
+        "type": "ui_button",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "group": "32099bfcf5223dd3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Delete Database",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "Black",
+        "className": "",
+        "icon": "",
+        "payload": "Please download the database before, once done it can not be reverted",
+        "payloadType": "str",
+        "topic": "Do you REALLY want to delete all?",
+        "topicType": "str",
+        "x": 130,
+        "y": 1160,
+        "wires": [
+            [
+                "d1fa9a309de07d35"
+            ]
+        ]
+    },
+    {
+        "id": "d1fa9a309de07d35",
+        "type": "ui_toast",
+        "z": "d3b4c2e1.c71fb",
+        "position": "dialog",
+        "displayTime": "",
+        "highlight": "red",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "NO",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 330,
+        "y": 1160,
+        "wires": [
+            [
+                "eac7fa0a41ac9a81"
+            ]
+        ]
+    },
+    {
+        "id": "eac7fa0a41ac9a81",
+        "type": "switch",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 470,
+        "y": 1160,
+        "wires": [
+            [
+                "ed2d888545163f0e"
+            ]
+        ]
+    },
+    {
+        "id": "ed2d888545163f0e",
+        "type": "sqlite",
+        "z": "d3b4c2e1.c71fb",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "DELETE FROM test;",
+        "name": "DELETE ALL",
+        "x": 610,
+        "y": 1160,
+        "wires": [
+            [
+                "58b02a0b4b64caf4"
+            ]
+        ]
+    },
+    {
+        "id": "58b02a0b4b64caf4",
+        "type": "delay",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 760,
+        "y": 1160,
+        "wires": [
+            [
+                "2816bae22586759f"
+            ]
+        ]
+    },
+    {
+        "id": "2816bae22586759f",
+        "type": "sqlite",
+        "z": "d3b4c2e1.c71fb",
+        "mydb": "ff263058e6c863b7",
+        "sqlquery": "fixed",
+        "sql": "DELETE FROM readings;",
+        "name": "DELETE ALL",
+        "x": 910,
+        "y": 1160,
+        "wires": [
+            [
+                "6965c50d8ea116ca"
+            ]
+        ]
+    },
+    {
+        "id": "4703631d570c1122",
+        "type": "ui_button",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "group": "32099bfcf5223dd3",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reboot system",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "grey",
+        "className": "",
+        "icon": "",
+        "payload": "You will be disconnected, make sure you stop the test",
+        "payloadType": "str",
+        "topic": "Do you REALLY want to reboot the system?",
+        "topicType": "str",
+        "x": 120,
+        "y": 1240,
+        "wires": [
+            [
+                "19c091edd690145e"
+            ]
+        ]
+    },
+    {
+        "id": "19c091edd690145e",
+        "type": "ui_toast",
+        "z": "d3b4c2e1.c71fb",
+        "position": "dialog",
+        "displayTime": "",
+        "highlight": "red",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "NO",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 330,
+        "y": 1240,
+        "wires": [
+            [
+                "ebeaa4bcfd0182db"
+            ]
+        ]
+    },
+    {
+        "id": "ebeaa4bcfd0182db",
+        "type": "switch",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 1240,
+        "wires": [
+            [
+                "ad1b2bb481e939fd"
+            ]
+        ]
+    },
+    {
+        "id": "ad1b2bb481e939fd",
+        "type": "exec",
+        "z": "d3b4c2e1.c71fb",
+        "command": "sudo reboot",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 650,
+        "y": 1240,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "928b9f99910174b2",
+        "type": "ui_button",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "group": "32099bfcf5223dd3",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Download log",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "blue",
+        "className": "",
+        "icon": "",
+        "payload": "log.txt",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 120,
+        "y": 1360,
+        "wires": [
+            [
+                "ece06122.7e762"
+            ]
+        ]
+    },
+    {
+        "id": "297ce2e395668ea6",
+        "type": "file",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "filename": "\\home\\Greater\\Desktop\\log.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 370,
+        "y": 1460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43ce0471d3d4b33a",
+        "type": "comment",
+        "z": "d3b4c2e1.c71fb",
+        "name": "log file creation",
+        "info": "",
+        "x": 120,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "6965c50d8ea116ca",
+        "type": "link out",
+        "z": "d3b4c2e1.c71fb",
+        "name": "update after delete",
+        "mode": "link",
+        "links": [],
+        "x": 965,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "7e243e77d0006b4e",
+        "type": "catch",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 100,
+        "y": 1440,
+        "wires": [
+            [
+                "297ce2e395668ea6"
+            ]
+        ]
+    },
+    {
+        "id": "3f7b1294b5da8586",
+        "type": "status",
+        "z": "d3b4c2e1.c71fb",
+        "name": "",
+        "scope": null,
+        "x": 100,
+        "y": 1500,
+        "wires": [
+            [
+                "297ce2e395668ea6"
+            ]
+        ]
+    },
+    {
+        "id": "fee4a5a25262bf55",
+        "type": "ui_template",
+        "z": "d3b4c2e1.c71fb",
+        "group": "32099bfcf5223dd3",
+        "name": "window redirect",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(data) {\n        if (data == \"energymeter.db\"){\n            window.location.href = \"/files/energymeter.db\";\n        }\n        if (data == \"log.txt\"){\n            window.location.href = \"/files/log.txt\";\n        }\n    });\n})(scope);\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 540,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3234f262056babaf",
+        "type": "delay",
+        "z": "82e6cfb985ead96b",
+        "name": "Recursive delay",
+        "pauseType": "delayv",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": true,
+        "outputs": 1,
+        "x": 620,
+        "y": 460,
+        "wires": [
+            [
+                "572e6832bcf30618",
+                "e8ae2b5439c2b898",
+                "336b515a6739015b"
+            ]
+        ]
+    },
+    {
+        "id": "d6577d4db9cbded4",
+        "type": "inject",
+        "z": "82e6cfb985ead96b",
+        "name": "1s rate",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1000",
+        "payloadType": "num",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "5ea132331cb6a8c4"
+            ]
+        ]
+    },
+    {
+        "id": "4158a248e1e2b3e4",
+        "type": "change",
+        "z": "82e6cfb985ead96b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "period",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 380,
+        "wires": [
+            [
+                "b300a73d7dc605ae",
+                "dc0ddfa85869080c"
+            ]
+        ]
+    },
+    {
+        "id": "572e6832bcf30618",
+        "type": "change",
+        "z": "82e6cfb985ead96b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "period",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 380,
+        "wires": [
+            [
+                "3234f262056babaf"
+            ]
+        ]
+    },
+    {
+        "id": "bf8022099b6ce347",
+        "type": "inject",
+        "z": "82e6cfb985ead96b",
+        "d": true,
+        "name": "Stop",
+        "props": [
+            {
+                "p": "reset",
+                "v": "",
+                "vt": "date"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 390,
+        "y": 500,
+        "wires": [
+            [
+                "3234f262056babaf"
+            ]
+        ]
+    },
+    {
+        "id": "966379b5822bea96",
+        "type": "comment",
+        "z": "82e6cfb985ead96b",
+        "name": "Programmable interval inject",
+        "info": "This flow functions and an inject node, but allows the interval to be changed.\nThe basic principle that the delay node output if fed back to itself through a change node which sets the appropriate delay for each message.\n\nThe 3 sample inject node set the interval to 1s, 2s, 5s. The interval is sent in the msg.payload in milliseconds.\nThese inject nodes can be supplemented with a dashboard input field (slider, dropdown) so it can be controlled from the screen as well.\nThis flow does not start sending out messages when deployed, if that is required, create another inject node with default rate and set to trigger on startup. \nI also added a \"Autostart with saved value\" this should be used if the flow variable is saved to file (in that case update the change nodes to use the file storage) so it can restart the trigger with the last delay value read from the file system (set this inject node to trigger on startup).\n\nThe interval is stored in a flow context variable, and this value is inserted into the message every time by the change node above the delay node. This ensures that if the rate value in the context value changes, it is applied at the next message.\n\nI added the delay 100ms and the msg.reset nodes, because when the rate changes it introduces a new message the recursive loop and that would mess up the timing.\n\n\"Stop\" inject node resets the delay node (deleted the message that keeps triggeting itelf) and stops the process.",
+        "x": 140,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "dc0ddfa85869080c",
+        "type": "change",
+        "z": "82e6cfb985ead96b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 460,
+        "wires": [
+            [
+                "3234f262056babaf"
+            ]
+        ]
+    },
+    {
+        "id": "b300a73d7dc605ae",
+        "type": "delay",
+        "z": "82e6cfb985ead96b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "572e6832bcf30618"
+            ]
+        ]
+    },
+    {
+        "id": "a03f349569110a9a",
+        "type": "function",
+        "z": "82e6cfb985ead96b",
+        "name": "s to ms",
+        "func": "msg.payload = msg.payload*1000;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 260,
+        "wires": [
+            [
+                "4158a248e1e2b3e4"
+            ]
+        ]
+    },
+    {
+        "id": "d991c2f0413ac064",
+        "type": "ui_slider",
+        "z": "82e6cfb985ead96b",
+        "name": "",
+        "label": "Acquisition period [s]",
+        "tooltip": "Insert the interval in seconds from 1 to 120",
+        "group": "6db24db1cd29db42",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": "1",
+        "max": "120",
+        "step": 1,
+        "className": "",
+        "x": 500,
+        "y": 260,
+        "wires": [
+            [
+                "a03f349569110a9a"
+            ]
+        ]
+    },
+    {
+        "id": "a2aa1cd66610da5e",
+        "type": "function",
+        "z": "82e6cfb985ead96b",
+        "name": "ms to s",
+        "func": "msg.payload = msg.payload/1000;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "d991c2f0413ac064"
+            ]
+        ]
+    },
+    {
+        "id": "5ea132331cb6a8c4",
+        "type": "switch",
+        "z": "82e6cfb985ead96b",
+        "name": "",
+        "property": "period",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 80,
+        "wires": [
+            [
+                "037a7ea104c8b36a"
+            ],
+            [
+                "a2aa1cd66610da5e",
+                "4158a248e1e2b3e4"
+            ]
+        ]
+    },
+    {
+        "id": "037a7ea104c8b36a",
+        "type": "change",
+        "z": "82e6cfb985ead96b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "period",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 60,
+        "wires": [
+            [
+                "a2aa1cd66610da5e",
+                "4158a248e1e2b3e4"
+            ]
+        ]
+    },
+    {
+        "id": "e8ae2b5439c2b898",
+        "type": "link out",
+        "z": "82e6cfb985ead96b",
+        "name": "acquire timer",
+        "mode": "link",
+        "links": [
+            "3db6b347806ddbe3"
+        ],
+        "x": 765,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "336b515a6739015b",
+        "type": "debug",
+        "z": "82e6cfb985ead96b",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 520,
+        "wires": []
     }
 ]
