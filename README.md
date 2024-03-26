@@ -1,7 +1,7 @@
-cooker
+Cooker Energy Meter
 ======
 
-an energy meter for cooking expirements analysis
+An energy meter for cooking expirements analysis
 
 ### About
 
@@ -13,23 +13,24 @@ Trought the dashboard the tests can be managed (inserted/deleted).
 Each test is relater to the correspondig power and time used
 
 ### How to connect
-- Supply the system
+- Supply the RPi
 - Connect to the WiFi
   - SSID: GREATER
   - PSW: cooker123
-- Open the web dashboard at greater.local:1880
+- Open the web dashboard at greater.local:1880/ui
 - Login
   - user
   - GREATERcooker
-- Plug the load
+- Plug the load trough
 
 ### How to use dashboard
 - Manage
   - Insert new test
-  - Run a test
+  - Run a test and check the running info
+  - Delete a test
   - See all tests' status
 - Setting
   - Check socket status
-  - Download Database
-  - Delete test
+  - Set date and time
+  - Download Database / Reboot system
   - See raw data (test and readings)  
