@@ -43,3 +43,8 @@ Trought the dashboard the tests can be managed.
 3) Start the test ... Stop the test
 4) Download the database with all the tests after a certain time
 5) Clear the system deleting the database and rebooting the RPi
+
+### How to elaborate data
+1) Run node-red and select the directory in wich the db is and the one in wich the tests will be saved
+2) Start the program, a .csv file will be created for each test_id containing timestamp, date (HH:mm:ss GG:MM:AAAA), current, voltage, power
+3) Into the web dashboard (localhost:1880) there will be the table of AVG and MAX values for each test and a chart with plotted current, voltage and power for each test
