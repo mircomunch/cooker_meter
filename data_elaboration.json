@@ -1,0 +1,1653 @@
+[
+    {
+        "id": "a313cfe82c0f69e2",
+        "type": "tab",
+        "label": "Executed v2",
+        "disabled": false,
+        "info": "based on test_id directly from 'readings'",
+        "env": []
+    },
+    {
+        "id": "e2fb8c52d7c87089",
+        "type": "tab",
+        "label": "Executed v1",
+        "disabled": true,
+        "info": "based on start and stop taken from 'test'",
+        "env": []
+    },
+    {
+        "id": "d203f90efd69aa49",
+        "type": "ui_tab",
+        "name": "Statistics",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "69f90b9ba54aa0b5",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "033bbcebd63798b3",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "d203f90efd69aa49",
+        "order": 2,
+        "disp": true,
+        "width": "28",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ff263058e6c863b7",
+        "type": "sqlitedb",
+        "db": "/home/Greater/Desktop/energymeter.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "42ff5df6768b11e4",
+        "type": "sqlitedb",
+        "db": "C:\\Users\\mirco\\Desktop\\sqlite\\energymeter.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "7b4009c2262736e9",
+        "type": "sqlitedb",
+        "db": "C:\\Users\\mirco\\Desktop\\sqlite\\energymeter.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "5b8822584efdd4ee",
+        "type": "ui_tab",
+        "name": "Graphs",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d090a6421be73472",
+        "type": "ui_group",
+        "name": "Chart",
+        "tab": "5b8822584efdd4ee",
+        "order": 2,
+        "disp": false,
+        "width": "28",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c20258b9ecc0c228",
+        "type": "function",
+        "z": "a313cfe82c0f69e2",
+        "name": "create object for each id",
+        "func": "var tests = [];\n// var topicAvg = [];\n// var topicFull = [];\nfor (let index = 0; index < msg.payload.length; index++) {\n    var durationMin = Math.round((msg.payload[index].stop - msg.payload[index].start)/1000/60);\n    var duration = (msg.payload[index].stop - msg.payload[index].start);\n\n    var data = new Date(msg.payload[index].created);\n    const createdDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n                    (((data.getMonth()+1) < 10 ? '0' : '') + (data.getMonth()+1)) + \"/\" +\n                    data.getFullYear() + \" \" +\n                    ((data.getHours() < 10 ? '0' : '') + data.getHours()) + \":\" +\n                    ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes())  + \":\" +\n                    ((data.getSeconds() < 10 ? '0' : '') + data.getSeconds());\n\n    data = new Date(msg.payload[index].start);\n    const startedDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n        (((data.getMonth() + 1) < 10 ? '0' : '') + (data.getMonth() + 1)) + \"/\" +\n        data.getFullYear() + \" \" +\n        ((data.getHours() < 10 ? '0' : '') + data.getHours()) + \":\" +\n        ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes()) + \":\" +\n        ((data.getSeconds() < 10 ? '0' : '') + data.getSeconds());\n\n    const id =  msg.payload[index].id;\n    const name = msg.payload[index].name;\n    const desc = msg.payload[index].description;\n    const start =  msg.payload[index].start;\n    const stop =  msg.payload[index].stop;\n\n    var topic1 = \"SELECT timestamp,current,voltage,power \"+\n                \"FROM readings WHERE test_id='\" + id + \"' ORDER BY timestamp ASC;\";\n    var topic2 = \"SELECT MAX(current),MAX(power),AVG(current),AVG(power) \"+\n                \"FROM readings WHERE test_id='\" + id + \"';\";\n    const filename = \"C:\\\\Users\\\\mirco\\\\Desktop\\\\tests\\\\\" + id + \".csv\";\n    tests.push(\n        {\n            id: id,\n            name: name,\n            desc: desc,\n            created: createdDate,\n            duration: duration,\n            durationMin: durationMin,\n            started: startedDate,\n            topicAvg: topic2,\n            topicFull: topic1,\n            filename: filename\n        }\n    );\n    // topicAvg.push(topic2);\n    // topicFull.push(topic1);\n}\nmsg.payload = tests;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 60,
+        "wires": [
+            [
+                "6238c392093d2c74",
+                "6947c81671670c4f"
+            ]
+        ]
+    },
+    {
+        "id": "dd87fba6658acdba",
+        "type": "inject",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "a96f7cc9b5b8a1e7"
+            ]
+        ]
+    },
+    {
+        "id": "a96f7cc9b5b8a1e7",
+        "type": "sqlite",
+        "z": "a313cfe82c0f69e2",
+        "mydb": "7b4009c2262736e9",
+        "sqlquery": "fixed",
+        "sql": "SELECT\n    *\nFROM\n    test\nWHERE\n    start IS NOT NULL\n    AND\n    stop IS NOT NULL\nORDER BY\n    created DESC;",
+        "name": "SELECT id executed",
+        "x": 320,
+        "y": 60,
+        "wires": [
+            [
+                "c20258b9ecc0c228",
+                "561a6069b26fac0d"
+            ]
+        ]
+    },
+    {
+        "id": "b7fab840c580a0dd",
+        "type": "sqlite",
+        "z": "a313cfe82c0f69e2",
+        "mydb": "7b4009c2262736e9",
+        "sqlquery": "msg.topic",
+        "sql": "SELECT\n    (timestamp, current, voltage, power)\nFROM\n    readings\nWHERE\n    ",
+        "name": "SELECT FROM readings",
+        "x": 530,
+        "y": 140,
+        "wires": [
+            [
+                "de09093bf6035bf0",
+                "c5f40c030bfe1e9a"
+            ]
+        ]
+    },
+    {
+        "id": "7f26a83443d34551",
+        "type": "ui_table",
+        "z": "a313cfe82c0f69e2",
+        "group": "033bbcebd63798b3",
+        "name": "",
+        "order": 0,
+        "width": "28",
+        "height": "6",
+        "columns": [
+            {
+                "field": "id",
+                "title": "ID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "name",
+                "title": "Name",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "desc",
+                "title": "Description",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "created",
+                "title": "Created",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "started",
+                "title": "Started",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "durationMin",
+                "title": "Duration [min]",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "maxCurr",
+                "title": "Current [A] (max)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "maxPow",
+                "title": "Power [W] (max)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "avgCurr",
+                "title": "Current [A] (avg)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "avgPow",
+                "title": "Power [W] (avg)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "avgKwh",
+                "title": "Energy [kWh] (avg)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "exactKwh",
+                "title": "Energy [kWh] (exact)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 610,
+        "y": 300,
+        "wires": [
+            [
+                "8bcf389adc71da53"
+            ]
+        ]
+    },
+    {
+        "id": "8bcf389adc71da53",
+        "type": "debug",
+        "z": "a313cfe82c0f69e2",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b805e1eed7ddc949",
+        "type": "change",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload.topicAvg",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "executed",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "b7fab840c580a0dd"
+            ]
+        ]
+    },
+    {
+        "id": "de09093bf6035bf0",
+        "type": "function",
+        "z": "a313cfe82c0f69e2",
+        "name": "set payload",
+        "func": "msg.executed.maxCurr = msg.payload[0][\"MAX(current)\"].toFixed(2);\nmsg.executed.maxPow = msg.payload[0][\"MAX(power)\"].toFixed(2),\nmsg.executed.avgCurr = msg.payload[0][\"AVG(current)\"].toFixed(2),\nmsg.executed.avgPow = msg.payload[0][\"AVG(power)\"].toFixed(2)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 140,
+        "wires": [
+            [
+                "b98c86b51bc71fc7"
+            ]
+        ]
+    },
+    {
+        "id": "b98c86b51bc71fc7",
+        "type": "change",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "executed.topicFull",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "45c11a7dc95204c0"
+            ]
+        ]
+    },
+    {
+        "id": "45c11a7dc95204c0",
+        "type": "sqlite",
+        "z": "a313cfe82c0f69e2",
+        "mydb": "7b4009c2262736e9",
+        "sqlquery": "msg.topic",
+        "sql": "SELECT\n    (timestamp, current, voltage, power)\nFROM\n    readings\nWHERE\n    ",
+        "name": "SELECT FROM readings",
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "f66ae55e66fe4090",
+                "5f48d5693096ff8c"
+            ]
+        ]
+    },
+    {
+        "id": "f66ae55e66fe4090",
+        "type": "function",
+        "z": "a313cfe82c0f69e2",
+        "name": "calculate kWh and date",
+        "func": "const avgKwh = parseFloat(msg.executed.avgPow) * (msg.executed.duration/3600000);\nmsg.executed.avgKwh = avgKwh.toFixed(2);\nvar exactKwh = 0;\nfor (let index = 1; index < msg.payload.length; index++) {\n    var istantI = msg.payload[index];\n    var istantI_1 = msg.payload[index-1];\n    var timeI = istantI.timestamp;\n    var timeI_1 = istantI_1.timestamp;\n    var current = istantI.current;\n    var voltage = istantI.voltage;\n    var power = istantI.power;\n\n    exactKwh += power * (timeI - timeI_1)/3600000;\n}\nfor (let index = 0; index < msg.payload.length; index++) {\n    const element = msg.payload[index];\n\n    var data = new Date(element.timestamp);\n    const humanDate = \"\" + ((data.getHours() < 10 ? '0' : '') + data.getHours()) + \":\" +\n        ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes()) + \":\" +\n        ((data.getSeconds() < 10 ? '0' : '') + data.getSeconds()) + \" \" +\n        ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n        (((data.getMonth() + 1) < 10 ? '0' : '') + (data.getMonth() + 1)) + \"/\" +\n        data.getFullYear();\n    element.date = humanDate;\n    if (!element.current){\n        element.current = 0;\n    } else {\n        element.current = element.current.toFixed(2);\n    }\n    if (!element.voltage){\n        element.voltage = 0;\n    } else {\n        element.voltage = element.voltage.toFixed(2);\n    }\n    if (!element.power){\n        element.power = 0;\n    } else {\n        element.power = element.power.toFixed(2);\n    }\n}\nmsg.executed.exactKwh = exactKwh.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "ceddacd5460cd096",
+                "8a3a53b233d504f2"
+            ]
+        ]
+    },
+    {
+        "id": "6238c392093d2c74",
+        "type": "split",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 750,
+        "y": 60,
+        "wires": [
+            [
+                "b805e1eed7ddc949"
+            ]
+        ]
+    },
+    {
+        "id": "89d13d49b4552410",
+        "type": "join",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "10",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 470,
+        "y": 300,
+        "wires": [
+            [
+                "7f26a83443d34551",
+                "407fe60498687140"
+            ]
+        ]
+    },
+    {
+        "id": "ceddacd5460cd096",
+        "type": "change",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "executed.topicAvg",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "executed.topicFull",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "executed",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "executed",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "89d13d49b4552410"
+            ]
+        ]
+    },
+    {
+        "id": "407fe60498687140",
+        "type": "file",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "filename": "C:\\Users\\mirco\\Desktop\\sqlite\\output.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 720,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a3a53b233d504f2",
+        "type": "change",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "executed.topicAvg",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "executed.topicFull",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "executed.raw",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "executed",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 420,
+        "wires": [
+            [
+                "e0ec9f35f3b0c55f",
+                "105bc01a0698d6eb"
+            ]
+        ]
+    },
+    {
+        "id": "c5f40c030bfe1e9a",
+        "type": "debug",
+        "z": "a313cfe82c0f69e2",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f1483386e4e2894a",
+        "type": "comment",
+        "z": "a313cfe82c0f69e2",
+        "name": "obtain a raw format for excel to be plotted",
+        "info": "",
+        "x": 220,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c5c7fdc315cd8fc7",
+        "type": "csv",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "timestamp,date,current,voltage,power",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": true,
+        "x": 650,
+        "y": 420,
+        "wires": [
+            [
+                "437fa7525e13e861",
+                "270287460887090f"
+            ]
+        ]
+    },
+    {
+        "id": "437fa7525e13e861",
+        "type": "file",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 800,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6947c81671670c4f",
+        "type": "debug",
+        "z": "a313cfe82c0f69e2",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e0ec9f35f3b0c55f",
+        "type": "debug",
+        "z": "a313cfe82c0f69e2",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "105bc01a0698d6eb",
+        "type": "change",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "payload.filename",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "payload.raw",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 420,
+        "wires": [
+            [
+                "c5c7fdc315cd8fc7"
+            ]
+        ]
+    },
+    {
+        "id": "270287460887090f",
+        "type": "debug",
+        "z": "a313cfe82c0f69e2",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "5f48d5693096ff8c",
+        "type": "debug",
+        "z": "a313cfe82c0f69e2",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "546c94bba0ce6648",
+        "type": "ui_dropdown",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select test ID",
+        "group": "d090a6421be73472",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 420,
+        "y": 560,
+        "wires": [
+            [
+                "7e48053e0d1fc438"
+            ]
+        ]
+    },
+    {
+        "id": "561a6069b26fac0d",
+        "type": "link out",
+        "z": "a313cfe82c0f69e2",
+        "name": "bring tests id",
+        "mode": "link",
+        "links": [
+            "6c5ace69c8716bbb"
+        ],
+        "x": 455,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "6c5ace69c8716bbb",
+        "type": "link in",
+        "z": "a313cfe82c0f69e2",
+        "name": "get tests id",
+        "links": [
+            "561a6069b26fac0d"
+        ],
+        "x": 115,
+        "y": 560,
+        "wires": [
+            [
+                "9173b991109de96b"
+            ]
+        ]
+    },
+    {
+        "id": "9173b991109de96b",
+        "type": "function",
+        "z": "a313cfe82c0f69e2",
+        "name": "set options",
+        "func": "msg.options = [];\nfor (let index = 0; index < msg.payload.length; index++) {\n    const element = msg.payload[index].id;\n    msg.options.push(element);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 560,
+        "wires": [
+            [
+                "546c94bba0ce6648"
+            ]
+        ]
+    },
+    {
+        "id": "27c4feee5efe6086",
+        "type": "file in",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 700,
+        "y": 560,
+        "wires": [
+            [
+                "e0bf19552f802e8d"
+            ]
+        ]
+    },
+    {
+        "id": "7e48053e0d1fc438",
+        "type": "function",
+        "z": "a313cfe82c0f69e2",
+        "name": "function 1",
+        "func": "msg.filename = \"C:\\\\Users\\\\mirco\\\\Desktop\\\\tests\\\\\" + msg.payload + \".csv\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 560,
+        "wires": [
+            [
+                "27c4feee5efe6086"
+            ]
+        ]
+    },
+    {
+        "id": "ed7410c424e3febe",
+        "type": "debug",
+        "z": "a313cfe82c0f69e2",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "e0bf19552f802e8d",
+        "type": "csv",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 250,
+        "y": 640,
+        "wires": [
+            [
+                "d534b07cca203c16"
+            ]
+        ]
+    },
+    {
+        "id": "df677761bc2db88e",
+        "type": "ui_chart",
+        "z": "a313cfe82c0f69e2",
+        "name": "",
+        "group": "d090a6421be73472",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d534b07cca203c16",
+        "type": "function",
+        "z": "a313cfe82c0f69e2",
+        "name": "function 2",
+        "func": "var current = [];\nvar voltage = [];\nvar power = [];\nvar chart = [];\nvar series = [\"current\", \"voltage\", \"power\"];\n// var labels = [\"current\", \"voltage\", \"power\"];\n\nfor (let index = 0; index < msg.payload.length; index++) {\n    const element = msg.payload[index];\n    current.push({ \"x\": element.timestamp, \"y\": element.current});\n    voltage.push({ \"x\": element.timestamp, \"y\": element.voltage });\n    power.push({ \"x\": element.timestamp, \"y\": element.power });\n}\nvar data = [];\ndata.push(current);\ndata.push(voltage);\ndata.push(power);\nchart.push({\n    \"series\": series,\n    // \"labels\": labels,\n    \"data\": data\n});\n\nmsg.payload = chart;\nreturn msg;\n\n// [{\n//     \"series\": [\"A\", \"B\", \"C\"],\n//     \"data\": [\n//         [{ \"x\": 1504029632890, \"y\": 5 },\n//         { \"x\": 1504029636001, \"y\": 4 },\n//         { \"x\": 1504029638656, \"y\": 2 }\n//         ],\n//         [{ \"x\": 1504029633514, \"y\": 6 },\n//         { \"x\": 1504029636622, \"y\": 7 },\n//         { \"x\": 1504029639539, \"y\": 6 }\n//         ],\n//         [{ \"x\": 1504029634400, \"y\": 7 },\n//         { \"x\": 1504029637959, \"y\": 7 },\n//         { \"x\": 1504029640317, \"y\": 7 }\n//         ]\n//     ],\n//     \"labels\": [\"\"]\n// }]",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 680,
+        "wires": [
+            [
+                "df677761bc2db88e",
+                "ed7410c424e3febe"
+            ]
+        ]
+    },
+    {
+        "id": "3ee13d9a2953e1fd",
+        "type": "function",
+        "z": "e2fb8c52d7c87089",
+        "name": "create object for each id",
+        "func": "var tests = [];\n// var topicAvg = [];\n// var topicFull = [];\nfor (let index = 0; index < msg.payload.length; index++) {\n    var durationMin = Math.round((msg.payload[index].stop - msg.payload[index].start)/1000/60);\n    var duration = (msg.payload[index].stop - msg.payload[index].start);\n\n    var data = new Date(msg.payload[index].created);\n    const createdDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n                    (((data.getMonth()+1) < 10 ? '0' : '') + (data.getMonth()+1)) + \"/\" +\n                    data.getFullYear() + \" \" +\n                    ((data.getHours() < 10 ? '0' : '') + data.getHours()) + \":\" +\n                    ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes())  + \":\" +\n                    ((data.getSeconds() < 10 ? '0' : '') + data.getSeconds());\n\n    data = new Date(msg.payload[index].start);\n    const startedDate = \"\" + ((data.getDate() < 10 ? '0' : '') + data.getDate()) + \"/\" +\n        (((data.getMonth() + 1) < 10 ? '0' : '') + (data.getMonth() + 1)) + \"/\" +\n        data.getFullYear() + \" \" +\n        ((data.getHours() < 10 ? '0' : '') + data.getHours()) + \":\" +\n        ((data.getMinutes() < 10 ? '0' : '') + data.getMinutes()) + \":\" +\n        ((data.getSeconds() < 10 ? '0' : '') + data.getSeconds());\n\n    const id =  msg.payload[index].id;\n    const name = msg.payload[index].name;\n    const desc = msg.payload[index].description;\n    const start =  msg.payload[index].start;\n    const stop =  msg.payload[index].stop;\n\n    var topic1 = \"SELECT timestamp,current,voltage,power \"+\n                \"FROM readings WHERE (timestamp <= \" + stop +\n                \" AND timestamp >= \" + start + \")\" + \n                \" ORDER BY timestamp ASC;\";\n    var topic2 = \"SELECT MAX(current),MAX(power),AVG(current),AVG(power) \"+\n                \"FROM readings WHERE (timestamp <= \" + stop +\n                \" AND timestamp >= \" + start + \");\";\n    tests.push(\n        {\n            id: id,\n            name: name,\n            desc: desc,\n            created: createdDate,\n            duration: duration,\n            durationMin: durationMin,\n            started: startedDate,\n            topicAvg: topic2,\n            topicFull: topic1\n        }\n    );\n    // topicAvg.push(topic2);\n    // topicFull.push(topic1);\n}\nmsg.payload = tests;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 60,
+        "wires": [
+            [
+                "3bf6a43aaf8a5426"
+            ]
+        ]
+    },
+    {
+        "id": "fc190e456cb8fb45",
+        "type": "inject",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "a36f6cfe7875aa01"
+            ]
+        ]
+    },
+    {
+        "id": "a36f6cfe7875aa01",
+        "type": "sqlite",
+        "z": "e2fb8c52d7c87089",
+        "mydb": "7b4009c2262736e9",
+        "sqlquery": "fixed",
+        "sql": "SELECT\n    *\nFROM\n    test\nWHERE\n    start IS NOT NULL\n    AND\n    stop IS NOT NULL\nORDER BY\n    created DESC;",
+        "name": "SELECT id executed",
+        "x": 320,
+        "y": 60,
+        "wires": [
+            [
+                "3ee13d9a2953e1fd"
+            ]
+        ]
+    },
+    {
+        "id": "948c0919f57c2b8b",
+        "type": "sqlite",
+        "z": "e2fb8c52d7c87089",
+        "mydb": "7b4009c2262736e9",
+        "sqlquery": "msg.topic",
+        "sql": "SELECT\n    (timestamp, current, voltage, power)\nFROM\n    readings\nWHERE\n    ",
+        "name": "SELECT FROM readings",
+        "x": 530,
+        "y": 140,
+        "wires": [
+            [
+                "b6ae2a985daf55ba",
+                "cb2384f061767f07"
+            ]
+        ]
+    },
+    {
+        "id": "c50eb69e5bbb2aac",
+        "type": "ui_table",
+        "z": "e2fb8c52d7c87089",
+        "group": "033bbcebd63798b3",
+        "name": "",
+        "order": 0,
+        "width": "28",
+        "height": "6",
+        "columns": [
+            {
+                "field": "id",
+                "title": "ID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "name",
+                "title": "Name",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "desc",
+                "title": "Description",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "created",
+                "title": "Created",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "started",
+                "title": "Started",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "durationMin",
+                "title": "Duration [min]",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "maxCurr",
+                "title": "Current [A] (max)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "maxPow",
+                "title": "Power [W] (max)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "avgCurr",
+                "title": "Current [A] (avg)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "avgPow",
+                "title": "Power [W] (avg)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "avgKwh",
+                "title": "Energy [kWh] (avg)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "exactKwh",
+                "title": "Energy [kWh] (exact)",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 610,
+        "y": 300,
+        "wires": [
+            [
+                "42f59be2a24f4178"
+            ]
+        ]
+    },
+    {
+        "id": "42f59be2a24f4178",
+        "type": "debug",
+        "z": "e2fb8c52d7c87089",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "2a3042b23edfe2e7",
+        "type": "change",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload.topicAvg",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "executed",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "948c0919f57c2b8b"
+            ]
+        ]
+    },
+    {
+        "id": "b6ae2a985daf55ba",
+        "type": "function",
+        "z": "e2fb8c52d7c87089",
+        "name": "set payload",
+        "func": "msg.executed.maxCurr = msg.payload[0][\"MAX(current)\"].toFixed(2);\nmsg.executed.maxPow = msg.payload[0][\"MAX(power)\"].toFixed(2),\nmsg.executed.avgCurr = msg.payload[0][\"AVG(current)\"].toFixed(2),\nmsg.executed.avgPow = msg.payload[0][\"AVG(power)\"].toFixed(2)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 140,
+        "wires": [
+            [
+                "dd7c91df665aea7f"
+            ]
+        ]
+    },
+    {
+        "id": "dd7c91df665aea7f",
+        "type": "change",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "executed.topicFull",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "49b8b253b91b8020"
+            ]
+        ]
+    },
+    {
+        "id": "49b8b253b91b8020",
+        "type": "sqlite",
+        "z": "e2fb8c52d7c87089",
+        "mydb": "7b4009c2262736e9",
+        "sqlquery": "msg.topic",
+        "sql": "SELECT\n    (timestamp, current, voltage, power)\nFROM\n    readings\nWHERE\n    ",
+        "name": "SELECT FROM readings",
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "c348cd69349f28f0"
+            ]
+        ]
+    },
+    {
+        "id": "c348cd69349f28f0",
+        "type": "function",
+        "z": "e2fb8c52d7c87089",
+        "name": "calculate kWh",
+        "func": "const avgKwh = parseFloat(msg.executed.avgPow) * (msg.executed.duration/3600000);\nmsg.executed.avgKwh = avgKwh.toFixed(2);\nvar exactKwh = 0;\nfor (let index = 1; index < msg.payload.length; index++) {\n    var istantI = msg.payload[index];\n    var istantI_1 = msg.payload[index-1];\n    var timeI = istantI.timestamp;\n    var timeI_1 = istantI_1.timestamp;\n    var current = istantI.current;\n    var voltage = istantI.voltage;\n    var power = istantI.power;\n\n    exactKwh += power * (timeI - timeI_1)/3600000;   \n}\nmsg.executed.exactKwh = exactKwh.toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 220,
+        "wires": [
+            [
+                "98c7769863d1fa8d",
+                "0d20c98a9b434250"
+            ]
+        ]
+    },
+    {
+        "id": "3bf6a43aaf8a5426",
+        "type": "split",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 750,
+        "y": 60,
+        "wires": [
+            [
+                "2a3042b23edfe2e7"
+            ]
+        ]
+    },
+    {
+        "id": "5dbe1ebefb5ebf64",
+        "type": "join",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "10",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 470,
+        "y": 300,
+        "wires": [
+            [
+                "c50eb69e5bbb2aac",
+                "b274c914321c0f24"
+            ]
+        ]
+    },
+    {
+        "id": "98c7769863d1fa8d",
+        "type": "change",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "executed.topicAvg",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "executed.topicFull",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "executed",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "executed",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "5dbe1ebefb5ebf64"
+            ]
+        ]
+    },
+    {
+        "id": "b274c914321c0f24",
+        "type": "file",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "filename": "C:\\Users\\mirco\\Desktop\\sqlite\\output.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 720,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "65a8577fdfbffa00",
+        "type": "file",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "filename": "C:\\Users\\mirco\\Desktop\\sqlite\\outputRAW.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 730,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0d20c98a9b434250",
+        "type": "change",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "executed.topicAvg",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "executed.topicFull",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "executed.raw",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "executed",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 420,
+        "wires": [
+            [
+                "fc47dd38ee086814"
+            ]
+        ]
+    },
+    {
+        "id": "fc47dd38ee086814",
+        "type": "join",
+        "z": "e2fb8c52d7c87089",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "10",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 470,
+        "y": 420,
+        "wires": [
+            [
+                "65a8577fdfbffa00"
+            ]
+        ]
+    },
+    {
+        "id": "cb2384f061767f07",
+        "type": "debug",
+        "z": "e2fb8c52d7c87089",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1afa09599ae94a9d",
+        "type": "comment",
+        "z": "e2fb8c52d7c87089",
+        "name": "obtain a raw format for excel to be plotted",
+        "info": "",
+        "x": 380,
+        "y": 360,
+        "wires": []
+    }
+]
