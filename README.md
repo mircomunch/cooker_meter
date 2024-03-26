@@ -5,12 +5,14 @@ An energy meter for cooking expirements analysis
 
 ### About
 
-The system is composed by a TECKIN smart socket and a RPi equipped with a NODE-Red service.
+The system is composed by:
+- TECKIN smart socket equipped with Wi-Fi
+- micro-computer Raspberry Pi (RPi) equipped with a NODE-Red service
+- PC that can connect to the RPi through the web dashboard
 
 The RPi ask for data to the socket trough WiFi (voltage, current, power) using propietary API.
 Those data are stored in a local database using SQLite and then provided at the user with a web dashboard.
-Trought the dashboard the tests can be managed (inserted/deleted).
-Each test is relater to the correspondig power and time used
+Trought the dashboard the tests can be managed.
 
 ### How to connect
 - Supply the RPi
@@ -21,16 +23,23 @@ Each test is relater to the correspondig power and time used
 - Login
   - user
   - GREATERcooker
-- Plug the load trough
+- Plug the load trough the socket
 
 ### How to use dashboard
-- Manage
-  - Insert new test
-  - Run a test and check the running info
+- Manage test
+  - Insert new test (Unique ID, name and description)
+  - Run a test and check the running info selecting the acquisition period (1s - 120s)
   - Delete a test
   - See all tests' status
 - Setting
-  - Check socket status
-  - Set date and time
-  - Download Database / Reboot system
-  - See raw data (test and readings)  
+  - Check system status (Socket connection state, last seen, RPi CPU temperature)
+  - Get and set current date and time
+  - Download Database / Delete Database / Reboot system / Download Log
+  - See raw data (test and readings)
+  
+### How to run a test
+1) Insert a new test with the unique ID
+2) Select the test in the "Start / Stop" section
+3) Start the test ... Stop the test
+4) Download the database with all the tests after a certain time
+5) Clear the system deleting the database and rebooting the RPi
