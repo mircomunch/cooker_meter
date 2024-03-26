@@ -1,7 +1,7 @@
 Cooker Energy Meter
 ======
 
-An energy meter for cooking expirements analysis
+An energy meter for cooking experiments analysis
 
 ### About
 
